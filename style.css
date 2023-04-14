@@ -1,0 +1,1420 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@200;300;400;500;600;700;800;900&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+
+}
+
+html,
+body {
+    font-family: 'Roboto Slab', serif;
+    scroll-behavior: smooth;
+    background-color: #01012e;
+}
+
+.top {
+    margin-top: 3%;
+}
+
+
+/*********************************************************
+           css for header section
+*********************************************************/
+
+.container {
+    max-width: 80%;
+    margin: auto;
+
+}
+
+.head_container {
+    max-width: 90%;
+    margin: auto;
+
+}
+
+header {
+    height: 10vh;
+
+}
+
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+h2 {
+    font-size: 62px;
+}
+
+.logo img {
+    width: 120px;
+}
+
+header nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 20px;
+}
+
+.menubar {
+    display: none;
+}
+
+.bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    transition: all 0.3s ease-in-out;
+    background-color: #20b9fc;
+}
+
+header ul {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: rgb(40, 37, 37);
+}
+
+header ul li {
+    margin-left: 2rem;
+    padding: 2px 15px;
+    background-color: #20b9fc;
+    outline: none;
+    border: 1px solid #20b9fc;
+    color: #20b9fc;
+    border-radius: 50px 50px 50px 0px;
+    margin-top: 10px;
+    transition: 0.5s;
+}
+
+header ul li a {
+    font-size: 10px;
+    font-weight: 400;
+    color: #5632fa;
+    transition: 0.5s;
+}
+
+header ul li a:hover {
+    color: lightgreen;
+}
+
+@media only screen and (max-width: 768px) {
+    header ul {
+        display: block;
+        position: fixed;
+        left: -100%;
+        top: 5rem;
+        flex-direction: column;
+        background-color: rgb(213, 225, 224);
+        width: 100%;
+        border-radius: 10px;
+        text-align: center;
+        transition: 0.5s;
+        box-shadow: 0 10px 27px rgba(0, 0, 0, 0.05);
+        z-index: 20;
+    }
+
+    header ul.active {
+        left: 0%;
+    }
+
+    header ul li {
+        margin: 1.5rem 0;
+    }
+
+    header ul li a {
+        color: black;
+    }
+
+    .menubar {
+        display: block;
+        cursor: pointer;
+    }
+
+    .menubar.active .bar:nth-child(2) {
+        opacity: 0;
+    }
+
+    .menubar.active .bar:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+
+    .menubar.active .bar:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+
+}
+
+/*********************************************************
+           css for hero section
+*********************************************************/
+
+.hero {
+    position: relative;
+    height: 60vh;
+}
+
+.home-text-box {
+    float: left;
+    width: auto;
+    font-style: italic;
+    padding-top: 30%;
+    padding-right: 3%;
+    padding-left: 10%;
+    transition: 0.5s;
+}
+
+.gradient {
+    background: -webkit-linear-gradient(rgb(149, 12, 127), rgb(2, 10, 163));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.home-text-box h1 {
+    color: rgba(32, 33, 17, 0.885);
+}
+
+.home-text-box span {
+    transition: 0.5s;
+    color: rgba(22, 192, 238, 0.885);
+    text-align: justify;
+}
+
+.home-text-box span:hover {
+    z-index: 1;
+    transform: scale(1.05s);
+}
+
+.button input {
+    padding: 10px 50px;
+    justify-content: center;
+    border-radius: 8%;
+    margin: 10px;
+    border-bottom: 5px solid rgba(141, 141, 227, 0.904);
+    overflow: hidden;
+    transition: 0.5s;
+}
+
+.button input:hover {
+    z-index: 1;
+    transform: scale(1.05s);
+    border-bottom: 5px solid lightgreen;
+}
+
+.hero-content img {
+    position: relative;
+    height: 57vh;
+    width: 100%;
+}
+
+.hero-content img:hover {
+    filter: blur(0px);
+}
+
+.hero-content {
+    display: grid;
+    grid-template-columns: 2fr 1.5fr 0.5fr;
+    grid-gap: 10px;
+}
+
+.heropic {
+    grid-column: 1;
+}
+
+.centered {
+    grid-column: 2;
+}
+
+.hero .social-icons {
+    grid-column: 3;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 150px;
+}
+
+.hero .social-icons a {
+    margin-bottom: 10px;
+}
+
+.centered {
+    position: absolute;
+    top: 40%;
+    left: 70%;
+    transform: translate(-50%, -50%);
+
+}
+
+
+@media only screen and (max-width: 768px) {
+    .hero {
+        padding: 10px;
+    }
+
+    .home-text-box {
+        justify-content: center;
+        left: -20px;
+    }
+
+    .centered {
+        position: absolute;
+        top: 50%;
+        left: 47%;
+        transform: translate(-50%, -50%);
+    }
+
+    .hero-content img {
+        visibility: hidden;
+        height: 57vh;
+        width: 100%;
+    }
+}
+
+/*********************************************************
+           css for number counter section
+*********************************************************/
+.counter {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 4em;
+    width: 100%;
+    text-align: center;
+    font-size: 12px;
+    font-weight: bold;
+    color: #333;
+}
+
+.counter h3 {
+    color: #b7bbc7;
+}
+
+.counter h1 {
+    font-style: italic;
+}
+
+@media only screen and (max-width: 768px) {
+    .counter {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 4em;
+        width: 100%;
+        text-align: center;
+        font-size: 5px;
+        font-weight: bold;
+        color: #333;
+    }
+
+}
+
+/*********************************************************
+           css for aboutme  section
+*********************************************************/
+.about {
+    background-color: #f5f5f7;
+    overflow: hidden;
+    margin-top: 5%;
+}
+
+.about img {
+    background-size: 70%;
+    height: 90vh;
+    float: right;
+
+}
+
+.inner-section {
+    width: 55%;
+    left: 20px;
+    margin: 120px 0px 10px 100px;
+    background-color: #b7bbc7;
+    padding: 50px;
+    box-shadow: 13px 12px 8px rgba(0, 0, 0, 0.3);
+}
+
+.inner-section h1 {
+    position: sticky;
+    margin-bottom: 10px;
+    font-size: 30px;
+    font-weight: 900;
+}
+
+.text {
+    font-size: 13px;
+    font-style: italic;
+    color: #545454;
+    line-height: 30px;
+    text-align: justify;
+    margin-bottom: 30px;
+}
+
+.skills button {
+    font-size: 22px;
+    font-style: italic;
+    text-align: center;
+    letter-spacing: 2px;
+    border: none;
+    border-radius: 20px;
+    padding: 8px;
+    width: 200px;
+    background-color: #20b9fc;
+    color: white;
+    cursor: pointer;
+}
+
+.skills button:hover {
+    transition: 1s;
+    background-color: #ecf5f5;
+    color: #00999c;
+}
+
+
+
+@media only screen and (max-width: 768px) {
+    .about {
+        padding: 10px;
+    }
+
+    .about img {
+        margin-top: 5%;
+        background-size: 70%;
+        height: 50vh;
+        align-items: center;
+
+    }
+
+    .inner-section {
+        margin-left: -35px;
+        width: 400px;
+        padding-left: -10px;
+        padding-right: -10px;
+        background-color: #b7bbc7;
+        overflow: hidden;
+        box-shadow: none;
+    }
+}
+
+/*********************************************************
+           css for searchbar  section
+*********************************************************/
+
+/* Style the search bar container */
+
+.searchbar {
+    background-color: #20b9fc;
+    height: 30vh;
+    align-content: center;
+
+}
+
+.searchbar div {
+    display: flex;
+    padding-top: 90px;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+    border: #ecf5f5;
+}
+
+
+/* Style the search bar input */
+.searchbar input[type="text"] {
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    margin-right: -40px;
+    /* Adjust for the button width */
+    width: 60%;
+    box-sizing: border-box;
+    box-shadow: 13px 12px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* Style the search button */
+.searchbar button {
+    padding-bottom: 20px;
+    height: 1px;
+    background-color: white;
+    color: #20b9fc;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* Style the search logo icon */
+.searchbar .fa-search {
+    font-size: 20px;
+}
+
+@media only screen and (max-width: 768px) {
+
+    .searchbar {
+        background-color: #f5f5f5;
+        height: 20vh;
+        align-content: center;
+
+    }
+
+    .searchbar div {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: #ecf5f5;
+    }
+
+    .searchbar input[type="text"] {
+        padding: 10px;
+        border-radius: 5px;
+        border: none;
+        margin-right: -40px;
+        /* Adjust for the button width */
+        width: 80%;
+        box-sizing: border-box;
+        box-shadow: 13px 12px 8px rgba(0, 0, 0, 0.3);
+    }
+}
+
+
+/*********************************************************
+           css for portfolio  section
+*********************************************************/
+
+/* Style the buttons */
+.portfolio {
+    padding: 50px;
+    height: 100%;
+}
+
+
+.buttons {
+    width: 100%;
+}
+
+.toggle-button {
+    margin-bottom: 5%;
+    width: 300px;
+    display: inline-flex;
+    justify-content: center;
+    border: none;
+    background-color: #ddd;
+    padding: 10px;
+    margin-bottom: 20px;
+    cursor: pointer;
+}
+
+.toggled_space {
+    justify-content: center;
+}
+
+.toggled_div {
+    padding: 20px;
+
+    border-radius: 5px;
+    margin: 0 10px;
+}
+
+.toggle-button:hover {
+    background-color: #b7bbc7;
+    color: #20b9fc;
+}
+
+.portfolio_space {
+    height: 50vh;
+    background-color: #f5f5f7;
+}
+
+/* Style the divs */
+.toggle-div {
+    display: none;
+    padding: 10px;
+}
+
+/* css for the article*/
+
+.portfolio center article {
+    display: flex;
+    padding: 0px 0px 60px 40px;
+}
+
+
+.portfolio center article p {
+    color: #20b9fc;
+}
+
+.portfolio center article a p {
+    color: #b7bbc7;
+}
+
+.portfolio center article a p:hover {
+    color: rgb(255, 250, 250);
+}
+
+.portfolio center article .card1 {
+    width: 40%;
+    padding: 0px 40px 0px 40px;
+    font-size: 15px;
+    font-style: italic;
+}
+
+@media only screen and (max-width: 768px) {
+    .portfolio center article .card1 {
+        width: 100%;
+    }
+}
+
+.portfolio center article .card1 h2 {
+    font-size: 20px;
+    padding-bottom: 10px;
+}
+
+.portfolio center article .card1 h2 img {
+    height: 190px;
+    width: 70%;
+}
+
+@media only screen and (max-width: 768px) {
+    .portfolio center article {
+        display: block;
+        padding: 5px;
+    }
+
+    .portfolio center article .card {
+        width: 100%;
+        padding: 5px;
+        font-size: 5px;
+        font-style: italic;
+    }
+
+    .portfolio center article .card h2 img {
+        height: 100px;
+        width: 100%;
+    }
+}
+
+
+
+/* Show the selected div */
+.active-div {
+    display: grid;
+}
+
+.hidden {
+    display: none;
+}
+
+
+/* for mobile phones*/
+
+@media only screen and (max-width: 768px) {
+    .toggle-button {
+        padding: 5px;
+        width: 25%;
+        font-size: 7px;
+    }
+}
+
+/*********************************************************
+           css for   section
+*********************************************************/
+/*css for 1st toggler
+***************************/
+#div1 {
+    width: 100%;
+    padding: 10px;
+}
+
+.grid-container {
+    display: grid;
+    gap: 10px;
+    padding: 10px;
+}
+
+
+.grid-item {
+    position: relative;
+    text-align: center;
+    padding: 20px;
+    font-size: 30px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.grid-item:hover {
+    z-index: 1;
+    transform: scale(1.02);
+}
+
+.item1 {
+    grid-column: 1 / span 2;
+    grid-row: 1;
+    width: 100%;
+    background-image: url(image/recipe.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.item3 {
+    width: 100%;
+    background-image: url(image/converter.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.item4 {
+    width: 100%;
+    background-image: url(image/calculator.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.item5 {
+    width: 100%;
+    background-color: none;
+}
+
+.item5 a p {
+    color: #20b9fc;
+}
+
+.item5 a p:hover {
+    color: #888;
+}
+
+.item2 {
+    grid-column: 3;
+    grid-row: 1 / span 2;
+    width: 100%;
+    height: 70vh;
+    background-image: url(image/salaryApp.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.parent {
+    position: relative;
+}
+
+.parent .description {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #b7bbc7;
+    color: #031d27;
+    font-size: 23px;
+    margin: auto;
+    font-style: italic;
+    opacity: 0;
+    /* to hide by default */
+    transition: opacity 0.5s ease;
+}
+
+.parent .description h4 {
+    color: khaki;
+}
+
+.parent .buttons {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 50px;
+    background-color: #b7bbc7;
+    opacity: 0;
+    /* to hide by default */
+    transition: opacity 0.5s ease;
+}
+
+.parent:hover .description {
+    opacity: 1;
+    /* show description on hover */
+}
+
+.parent:hover .buttons {
+    opacity: 1;
+    /* show buttons on hover */
+}
+
+.Demo,
+.github {
+    color: black;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+    padding: 10px 50px;
+    justify-content: center;
+    border-radius: 8%;
+    margin: 10px;
+    border-bottom: 5px solid rgba(141, 141, 227, 0.904);
+    overflow: hidden;
+    transition: 0.5s;
+}
+
+.Demo:hover,
+.github:hover {
+    background-color: white;
+    color: #20b9fc;
+    z-index: 1;
+    transform: scale(1.05s);
+    border-bottom: 5px solid lightgreen;
+}
+
+
+
+/*css for the 2nd toggle
+*********************************/
+
+.div2-item {
+    position: relative;
+    text-align: center;
+    border-radius: 10px;
+    padding: 20px;
+    height: 100%;
+    font-size: 20px;
+    font-style: italic;
+    cursor: pointer;
+}
+
+.div2-item h5 {
+    color: yellow;
+}
+
+.grid-container .card1 {
+    grid-column: 1;
+    grid-row: 1;
+}
+
+.grid-container .card2 {
+    grid-column: 2;
+    grid-row: 1 / span 2;
+}
+
+.grid-container .card3 {
+    grid-column: 3;
+    grid-row: 1;
+}
+
+.grid-container .card4 {
+    grid-column: 1;
+    grid-row: 3;
+}
+
+.grid-container .card5 {
+    grid-column: 2;
+    grid-row: 3 / span 4;
+    box-shadow: none;
+    height: 80%;
+}
+
+.grid-container .card6 {
+    grid-column: 3;
+    grid-row: 3;
+}
+
+.div2-item .tooltip {
+    position: relative;
+    margin-top: 10px;
+    display: flex;
+    width: 250px;
+    height: 40PX;
+    padding: 10px;
+    margin: auto;
+    margin-top: 10px;
+    border-radius: 10px;
+    border: #20b9fc solid 1px;
+    justify-content: space-evenly;
+    background-color: #040441;
+    transition: 0.5s;
+    color: rgba(244, 249, 138, 0.885);
+}
+
+.div2-item .tooltip:hover {
+    z-index: 1;
+    transform: scale(1.05);
+    background: #b7bbc7;
+    color: #20b9fc;
+}
+
+.div2-item .tooltip h6 {
+    float: left;
+
+}
+
+.div2-item .tooltip img {
+    float: right;
+    border-radius: 50%;
+    margin-top: -7px;
+}
+
+/*css for tooltiptext*/
+.tooltip .tooltiptext {
+    position: absolute;
+    visibility: hidden;
+    width: 100%;
+    background-color: rgb(137, 65, 189);
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+    border-radius: 6px;
+    position: absolute;
+
+}
+
+.progress-bar-container {
+    background-color: #ddd;
+    background: rgb(242, 235, 235);
+    width: 80%;
+    height: 3px;
+    align-content: center;
+    margin-left: 20px;
+    margin-top: 10px;
+    border-radius: 10px;
+}
+
+.progress-bar {
+    background-color: #20b9fc;
+    height: 100%;
+    border-radius: 10px;
+}
+
+.tooltipbottom {
+    top: 100%;
+    left: 70%;
+    margin-left: -50%px;
+}
+
+.tooltiptop {
+    bottom: 100%;
+    left: 50%;
+    margin-left: -60px;
+}
+
+.tooltipright {
+    top: -5px;
+    left: 105%;
+}
+
+.tooltipleft {
+    top: -5px;
+    right: 105%;
+}
+
+/* Show the tooltip text when you mouse over the tooltip container */
+.tooltip:hover .tooltiptext {
+    visibility: visible;
+}
+
+@media only screen and (max-width: 768px) {
+    .grid-container {
+        display: block;
+        gap: 10px;
+        padding: 10px;
+    }
+
+    .grid-container .card5 {
+        width: 50%;
+        height: 50%;
+    }
+}
+
+/*css for the 3rd toggle
+*********************************/
+
+
+.morphism {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 2em;
+}
+
+@media only screen and (max-width: 768px) {
+    .morphism {
+        display: list-item;
+        gap: 1em;
+
+    }
+}
+
+.projects {
+    padding-top: 10%;
+    padding: 10px 0;
+}
+
+.max-width {
+    max-width: 1300px;
+    padding: 0 15px;
+    margin: 0;
+}
+
+
+.mySlides .box {
+    position: relative;
+    width: 30%;
+    height: 400px;
+    background: #060c21;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #000;
+}
+
+@media only screen and (max-width: 768px) {
+    .mySlides .box {
+        width: 300px;
+        height: 100%;
+        padding: auto;
+        margin: 0;
+    }
+}
+
+.morphism .box::before {
+    content: "";
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: #fff;
+    transform: skewx(2deg) skewY(2deg);
+    z-index: -1;
+}
+
+.morphism .box:nth-child(1)::before {
+    background: linear-gradient(290deg, #ff0057, #e64a19);
+}
+
+
+.box .content {
+    position: relative;
+    padding: 20px;
+}
+
+.box .content h2 {
+    position: absolute;
+    top: -60px;
+    right: 5%;
+    margin: 0;
+    padding: 0;
+    font-size: 10em;
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.box:hover .content h2 {
+    top: -120px;
+}
+
+.box .content h3 {
+    margin: 0 0 10px;
+    padding: 0;
+    font-size: 24px;
+    font-weight: 500;
+    color: #fff;
+}
+
+.box .content p {
+    margin: 0;
+    padding: 0;
+    color: #20b9fc;
+    font-size: 12px;
+}
+
+.box .content p strong {
+    color: #ff6600;
+}
+
+.box .content a {
+    position: relative;
+    margin: 20px 0 0;
+    padding: 10px 20px;
+    text-decoration: none;
+    border: 1px solid #fff;
+    display: inline-block;
+    color: #fff;
+    transform: translate(-40px);
+    transition: 0.5;
+    opacity: 0;
+    visibility: hidden;
+
+}
+
+.box:hover .content a {
+    transform: translatey(0);
+    opacity: 1;
+    visibility: visible;
+}
+
+.box .content a:hover {
+    color: #20b9fc;
+    background: #040441;
+}
+
+
+/* css for the slider buttons*/
+.w3-content {
+    position: relative;
+    max-width: 90%;
+    margin: auto;
+}
+
+@media only screen and (max-width: 768px) {
+    .w3-content {
+        max-width: 100%;
+        margin: auto;
+    }
+}
+
+.w3-button {
+    background-color: #01012e;
+    color: #20b9fc;
+    padding: 8px 16px;
+    font-size: 20px;
+    border: none;
+    cursor: pointer;
+}
+
+.w3-button:hover {
+    color: #888;
+}
+
+.w3-display-left {
+    position: absolute;
+    left: -87px;
+    top: 50%;
+    margin-top: -22px;
+}
+
+.w3-display-right {
+    position: absolute;
+    right: -87px;
+    top: 50%;
+    margin-top: -22px;
+}
+
+
+
+
+
+
+/*********************************************************
+           css for  modal
+*********************************************************/
+
+/* Center the Modal */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0%;
+    top: 0%;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+/* Modal Content */
+.modal-content {
+    background: rgba(79, 79, 133, 0.904);
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 60%;
+    height: 70%;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    color: white;
+}
+
+/* The Close Button */
+.close {
+    color: #f5f5f7;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+/*********************************************************
+           css for  contact  section
+*********************************************************/
+.contact-form-container {
+    display: flex;
+    padding: 30px;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: stretch;
+
+}
+
+.contact-details {
+    flex: 1;
+    display: flex;
+    height: 490px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 30px;
+    background-color: #20b9fc;
+    animation: fadeInLeft 1s ease-out;
+    box-shadow: 13px 12px 8px rgba(0, 0, 0, 0.3);
+}
+
+.send-message {
+    flex: 3;
+    display: flex;
+    height: 50%;
+    margin-top: 40px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 30px;
+    background-color: #b7bbc7;
+    animation: fadeInRight 1s ease-out;
+    box-shadow: 13px 12px 8px rgba(0, 0, 0, 0.3);
+}
+
+#popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 20px;
+    border: 1px solid black;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+    z-index: 999;
+    display: none;
+}
+
+#popup button {
+    background-color: #ff6600;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 40px;
+    cursor: pointer;
+    margin-top: 10px;
+    margin-left: 40%;
+    transition: all 0.2s ease-out;
+}
+
+.contact-details center a img {
+    border-radius: 50%;
+}
+
+.contact-details p i {
+    margin-right: 10px;
+}
+
+.social-icons {
+    margin-top: auto;
+}
+
+.social-icons a {
+    display: inline-block;
+    margin-right: 20px;
+    color: rgb(16, 202, 239);
+    font-size: 1.5rem;
+    transition: all 0.2s ease-in-out;
+}
+
+.social-icons a:hover {
+    color: #fff;
+    transform: scale(1.2);
+}
+
+
+.contact_form h2 {
+    font-size: 20px;
+    margin: 0;
+    margin-bottom: 20px;
+}
+
+.contact_form p {
+    margin: 0;
+    margin-bottom: 10px;
+}
+
+ul.social-media-links {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+ul.social-media-links li {
+    margin-right: 10px;
+}
+
+ul.social-media-links li:last-child {
+    margin-right: 0;
+}
+
+ul.social-media-links li a {
+    color: rgb(95, 13, 238);
+    text-decoration: none;
+    transition: all 0.2s ease-out;
+}
+
+ul.social-media-links li a:hover {
+    color: #ff6600;
+}
+
+.contact_form label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.contact_form input,
+textarea {
+    display: block;
+    width: 50vw;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 2px solid #ccc;
+    border-radius: 10px;
+    box-shadow: 13px 12px 8px rgba(0, 0, 0, 0.3);
+}
+
+.contact_form button[type="submit"] {
+    background-color: #ff6600;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 40px;
+    cursor: pointer;
+    transition: all 0.2s ease-out;
+}
+
+.contact_form button[type="submit"]:hover {
+    background-color: #e65c00;
+}
+
+.contact_formbutton[type="submit"] {
+    background-color: #ff6600;
+    color: #fff;
+    border: none;
+    width: 150px;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: all 0.2s ease-out;
+}
+
+.contact_form button[type="submit"]:hover {
+    background-color: #e65c00;
+}
+
+@media only screen and (max-width: 768px) {
+
+    .contact-form-container {
+        display: block;
+        width: 100%;
+    }
+
+    .contact-details {
+        height: 30vh;
+        font-size: 12px;
+        margin-bottom: 0;
+    }
+
+    .send-message {
+        height: 50vh;
+        padding: 2px;
+        font-size: 12px;
+        margin-top: 0;
+
+    }
+
+    .send-message input {
+        height: 20px;
+        padding: 0;
+        width: 250px;
+    }
+
+    .send-message textarea {
+        width: 250px;
+    }
+
+}
+
+/*********************************************************
+           css for footer  section
+*********************************************************/
+
+footer {
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    position: relative;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 70px;
+    z-index: 999;
+}
+
+.footer-content {
+    display: block;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.footer-content p {
+    margin: 0 20px;
+    font-size: 14px;
+    line-height: 25px;
+    animation: move 10s ease-in-out infinite;
+}
+
+@keyframes move {
+    0% {
+        transform: translateX(0);
+    }
+
+    50% {
+        transform: translateX(50px);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
+}
+
+/*********************************************************
+           css for go up button  section
+*********************************************************/
+
+#scroll-to-top-btn {
+    display: none;
+    position: fixed;
+    bottom: 90px;
+    right: 30px;
+    z-index: 99;
+    font-size: 18px;
+    border: none;
+    outline: none;
+    background-color: #ffffff;
+    color: #20b9fc;
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 80%;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+#scroll-to-top-btn:hover {
+    background-color: #b7bbc7;
+}

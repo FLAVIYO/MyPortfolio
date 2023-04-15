@@ -70,15 +70,16 @@
                 <div class="home-page">
                     <div class="home-text-box">
                         <h1>Hi, am Thabang</h1>
-                        <strong class="gradient">A DEVELOPER</strong><br></br>
-                        <span>As a recent graduate i am seeking a role which allows</span>
+                        <strong class="gradient">A SOFTWARE DEVELOPER</strong><br></br>
+                        <span>As a recent graduate, i am seeking a role which allows</span>
                         <span>me to continue learning and perfecting my skills as i</span>
                         <span> provide high-quality work, and encourages me to flourish</span>
-                        <span> developer</span><br>
+                        <span>as a developer</span><br>
 
                         <!-- button to open modal -->
                         <div class="button">
-                            <input id="myBtn" class="button" type="button" value="contact me">
+                            <a href="#contact-form"><input id="myBtn" class="button" type="button"
+                                    value="contact me"></a>
                         </div>
                     </div>
                 </div>
@@ -154,17 +155,26 @@
             <div class="inner-section">
                 <h1>About Me</h1>
                 <p class="text">
-                    Thabang is an Information Technology graduate born in South Africa in gauteng province,
-                    am currently Seeking opportunities to break into the work invironment.
-                    I am very proficient with developing applications, web applications and window applications,
-                    so far i have acquired quite a lot of skills along the way.
-                    Skills like java, php, Mysql and of course the most interesting ones HTML,CSS and JAVASCRIPT.
-                    Though am not a master in it do have very good knowledge of a library like REACT.
-                    I am a gaol driven and self motivated person. I like challlenges ,
-                    they get me so excited. I just love solving daily basis problems
+                    An information technology graduate with skills in full stack development and with a deep
+                    understanding of
+                    DevOps culture i am a valuable asset in today's digital landscape. AM an individual who is
+                    well-versed in a
+                    variety of programming languages and frameworks(see my skills below, allowing me to build robust and
+                    efficient
+                    applications that can run on a variety of platforms. My knowledge of both front-end and back-end
+                    development allows them to create cohesive user experiences that seamlessly integrate with
+                    underlying systems.<br>
+                    In addition to my technical abilities, am a graduate with expertise in DevOps culture that has a
+                    unique
+                    perspective on software development. I understand the importance of collaboration between
+                    development and operations teams, as well as the value of continuous integration and deployment
+                    practices. My mindset allows me to develop applications that are not only functional but also
+                    scalable, reliable, and easy to maintain. With my combination of technical and cultural
+                    knowledge,am an information technology graduate with full stack and DevOps skills that is poised for
+                    success in a rapidly changing industry.
                 </p>
                 <div class="skills">
-                    <button> <a href="#contact-form" class="nav-link">Contact Me</a></button>
+                    <a href="#contact-form"> <button class="nav-link">Hire Me</button></a>
                 </div>
             </div>
         </div>
@@ -175,11 +185,12 @@
             <input type="text" id="search-input" placeholder="Search...">
             <button id="search-button"><i class="fa fa-search"></i></button>
         </div>
+        <!--script to search -->
         <script>
             // Get the search bar elements
             const searchInput = document.getElementById('search-input');
             const searchButton = document.getElementById('search-button');
-            const searchSection = document.getElementById('search-section');
+            const searchSection = document.getElementById('portfolio');
 
             // Add event listener to search button
             searchButton.addEventListener('click', function () {
@@ -189,23 +200,27 @@
                 // Get all the elements in the search section
                 const searchElements = searchSection.getElementsByTagName('*');
 
-                // Loop through all the elements in the search section
+                // Looping through all the elements in the search section
                 for (let i = 0; i < searchElements.length; i++) {
                     const element = searchElements[i];
 
-                    // Check if the element contains the search term
+                    // Checking if the element contains the search term
                     if (element.innerText.toLowerCase().includes(searchTerm)) {
-                        // If it does, show the element
+                        // Creating a new element for each matching text node and highlight the search term
+                        const newElement = document.createElement('span');
+                        newElement.innerHTML = element.innerHTML.replace(new RegExp(`(${searchTerm})`, 'gi'), '<mark>$1</mark>');
+                        element.innerHTML = newElement.innerHTML;
+
+                        // Show the element
                         element.style.display = 'block';
                     } else {
-                        // If it doesn't, hide the element
+                        // Hide the element
                         element.style.display = 'none';
                     }
                 }
             });
-
-
         </script>
+
     </section>
     <!--portfolio section-->
     <section class="portfolio top" id="portfolio">
@@ -271,7 +286,8 @@
                         <div class="grid-item item1 parent">
                             <div class="description">
                                 <h4>RECIPE APP</h4>
-                                <p>The Application Authenticate users ,using node.js an express for Back-end tech. I used
+                                <p>The Application Authenticate users ,using node.js an express for Back-end tech. I
+                                    used
                                     bcryt to hash the password. The App allows users to add recipes and display them to
                                     the front end for users Consumption .users can save recipes to use them when needed
                                 </p>
@@ -286,7 +302,7 @@
                         <div class="grid-item item2 parent">
                             <div class="description">
                                 <h4>Salary Proccesing</h4>
-                                <p>The purpose of Salary Proccesing app is to help employers manage 
+                                <p>The purpose of Salary Proccesing app is to help employers manage
                                     their employee salaries and payroll more efficiently.</p>
                                 </p>
                                 <span><strong>STACK USED:</strong> JAVA , NetBeans ,MySql ,xampp</span>
@@ -299,7 +315,7 @@
                             <div class="description">
                                 <h4>Currency Conveter</h4>
                                 <p>
-                                    The App helps user to convert our South Africa Currency(R) TO other major 
+                                    The App helps user to convert our South Africa Currency(R) TO other major
                                     Currencies like US Dollar and POUNDS
                                 </p>
                                 <span><strong>STACK USED:</strong> JAVA , INTELIJ IDEA</span>
@@ -312,7 +328,7 @@
                             <div class="description">
                                 <h4>Weather App</h4>
                                 <p>
-                                    coming soon 
+                                    coming soon
                                 </p>
                                 <span><strong>STACK USED:</strong>Django ,</span>
                             </div>

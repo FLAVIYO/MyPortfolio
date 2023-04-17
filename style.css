@@ -1122,6 +1122,31 @@ header ul li a:hover {
 }
 
 
+#popup2 {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 20px;
+    border: 1px solid black;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+    z-index: 999;
+    display: none;
+}
+
+#popup2 button {
+    background-color: #ff6600;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 40px;
+    cursor: pointer;
+    margin-top: 10px;
+    margin-left: 40%;
+    transition: all 0.2s ease-out;
+}
+
 
 
 

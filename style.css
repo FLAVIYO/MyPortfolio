@@ -11,17 +11,56 @@ html,
 body {
     font-family: 'Roboto Slab', serif;
     scroll-behavior: smooth;
-    background-color: #01012e;
+    background-color: #f5f5f7;
 }
 
 .top {
     margin-top: 3%;
-} /* to highlight the searched word*/
+}
+
+/* to highlight the searched word*/
 mark {
     background-color: yellow;
     color: black;
 
 }
+
+/* Styles for day mode */
+.day-mode {
+    background-color: #f5f5f7;
+}
+
+/* Styles for night mode */
+.night-mode {
+    background-color: #040441;
+}
+
+/* Button styles */
+#mode-toggle-btn {
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    padding: 10px;
+    border-radius: 60%;
+    font-size: 15px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+#mode-toggle-btn:hover {
+    background-color: #ddd;
+}
+
+/* Styles for day mode button */
+.day-mode #mode-toggle-btn::before {
+    content: "☾";
+}
+
+/* Styles for night mode button */
+.night-mode #mode-toggle-btn::before {
+    content: "☼";
+}
+
 
 
 
@@ -592,6 +631,7 @@ header ul li a:hover {
         height: 100%;
         width: 100%;
     }
+
     .portfolio center article {
         display: block;
         padding: 5px;
@@ -804,7 +844,7 @@ header ul li a:hover {
 }
 
 .div2-item h5 {
-    color: yellow;
+    color: #20b9fc;
 }
 
 .grid-container .card1 {

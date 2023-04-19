@@ -1142,6 +1142,12 @@ header ul li a:hover {
     border: none;
     cursor: pointer;
 }
+.day-mode .w3-button {
+    background-color: #f5f5f7;
+}
+.night-mode .w3-button {
+    background-color: #01012e;
+}
 
 .w3-button:hover {
     color: #888;

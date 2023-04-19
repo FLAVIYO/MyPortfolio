@@ -18,1086 +18,77 @@
     <script src="lightbox-plus-jquery.js" defer></script>
 </head>
 
-<body>
-    <!--header section-->
-    <header class="header" id="header">
-        <div class="container">
-            <nav>
-                <a href="#" class="logo"> <img src="image/logo.PNG" alt=""> </a>
+<body class="day-mode">
+    <div id="app-container">
+        <header class="header" id="header">
+            <div class="container">
+                <nav>
+                    <a href="#" class="logo"> <img src="image/logo.PNG" alt=""> </a>
 
-                <ul class="nav-menu">
-                    <li> <a href="#header" class="nav-link">Home</a> </li>
-                    <li> <a href="#aboutme" class="nav-link">AboutMe</a> </li>
-                    <li> <a href="#portfolio" class="nav-link">Portfolio</a> </li>
-                    <li> <a href="#contact-form" class="nav-link">Contacts</a> </li>
-                </ul>
+                    <ul class="nav-menu">
+                        <li> <a href="#header" class="nav-link">Home</a> </li>
+                        <li> <a href="#aboutme" class="nav-link">AboutMe</a> </li>
+                        <li> <a href="#portfolio" class="nav-link">Portfolio</a> </li>
+                        <li> <a href="#contact-form" class="nav-link">Contacts</a> </li>
+                    </ul>
 
-                <div class="menubar">
-                    <span class="bar"></span>
-                    <span class="bar"></span>
-                    <span class="bar"></span>
-                </div>
-            </nav>
-        </div>
-    </header>
-    <!--script for menubar-->
-    <script>
-        const menubar = document.querySelector('.menubar');
-        const navMenu = document.querySelector('.nav-menu');
-
-        menubar.addEventListener("click", mobileMenu);
-
-        function mobileMenu() {
-            menubar.classList.toggle("active");
-            navMenu.classList.toggle("active");
-        }
-
-        const navLink = document.querySelectorAll('.nav-link');
-        navLink.forEach((n) => n.addEventListener("click", closeMenu));
-
-        function closeMenu() {
-            menubar.classList.remove("active");
-            navMenu.classList.remove("active");
-        }
-    </script>
-    <!--homepage section-->
-    <section class="hero top" id="hero">
-        <div class="hero-content">
-            <div class="heropic">
-                <img src="image/herobuner.png">
-            </div>
-            <div class="centered">
-                <div class="home-page">
-                    <div class="home-text-box">
-                        <h1>Hi, am Thabang</h1>
-                        <strong class="gradient">A SOFTWARE DEVELOPER</strong><br></br>
-                        <span>As a recent graduate, i am seeking a role which allows</span>
-                        <span>me to continue learning and perfecting my skills as i</span>
-                        <span> provide high-quality work, and encourages me to flourish</span>
-                        <span>as a developer</span><br>
-
-                        <!-- button to open modal -->
-                        <div class="button">
-                            <a href="#contact-form"><input id="myBtn" class="button" type="button"
-                                    value="contact me"></a>
-                        </div>
+                    <div class="menubar">
+                        <span class="bar"></span>
+                        <span class="bar"></span>
+                        <span class="bar"></span>
                     </div>
-                </div>
+                </nav>
             </div>
-            <div class="social-icons">
-                <a href="https://github.com/FLAVIYO" target="_blank"><i class="fab fa-github"></i></a>
-                <a href="https://www.facebook.com/dimaria.junior.7?mibextid=LQQJ4d" target="_blank"><i
-                        class="fab fa-facebook-f"></i></a>
-                <a href="https://api.whatsapp.com/send?phone=+27693213995" target="_blank"><i
-                        class="fab fa-whatsapp"></i></a>
-                <a href="https://twitter.com/@flaviyo1" target="_blank"><i class="fab fa-twitter"></i></a>
-                <a href="https://instagram.com/bhut.flava?igshid=YmMyMTA2M2Y=" target="_blank"><i
-                        class="fab fa-instagram"></i></a>
-                <a href="https://www.linkedin.com/in/thabang-shongwe-9623a0244" target="_blank"><i
-                        class="fab fa-linkedin"></i></a>
-            </div>
-
-    </section>
-    <!--number count saction-->
-    <section class="counter top">
-        <div class="counters">
-            <h1><span class="count">0</span>+ </h1>
-            <i class="fa fa-folder-open-o" style="font-size:48px;"></i>
-            <h3>Projects Completed</h3>
-        </div>
-        <div class="counters">
-            <h1><span class="count2">0</span>+ hours</h1>
-            <i class="fa fa-spinner" style="font-size:48px;"></i>
-            <h3>Develoment Time</h3>
-        </div>
-        <div class="counters">
-            <h1><span class="count3">0</span>+ Lines</h1>
-            <i class="fa fa-code" style="font-size:48px;"></i>
-            <h3>Lines Of Code</h3>
-        </div>
-        <div class="counters">
-            <h1><span class="count4">0</span>years</h1>
-            <i class="fa fa-calendar-o" style="font-size:48px;"></i>
-            <h3>Industry Experience</h3>
-        </div>
-        <!--script for the counter-->
+        </header>
+        <!--script for menubar-->
         <script>
+            const menubar = document.querySelector('.menubar');
+            const navMenu = document.querySelector('.nav-menu');
 
-            function animateValue(obj, start, end, duration) {
-                let startTimestamp = null;
-                const step = (timestamp) => {
-                    if (!startTimestamp) startTimestamp = timestamp;
-                    const progress = Math.min((timestamp - startTimestamp) / duration, 1);
-                    const value = Math.floor(progress * (end - start) + start);
-                    obj.innerHTML = value;
-                    if (progress < 1) {
-                        window.requestAnimationFrame(step);
-                    }
-                };
-                window.requestAnimationFrame(step);
+            menubar.addEventListener("click", mobileMenu);
+
+            function mobileMenu() {
+                menubar.classList.toggle("active");
+                navMenu.classList.toggle("active");
             }
-            const count4 = document.querySelector(".count4");
-            animateValue(count4, 0, 0, 1000);
-            const count3 = document.querySelector(".count3");
-            animateValue(count3, 0, 5000, 2000);
-            const count2 = document.querySelector(".count2");
-            animateValue(count2, 0, 2000, 2000);
-            const count = document.querySelector(".count");
-            animateValue(count, 0, 12, 2000); // change the start, end, and duration values as needed
 
+            const navLink = document.querySelectorAll('.nav-link');
+            navLink.forEach((n) => n.addEventListener("click", closeMenu));
+
+            function closeMenu() {
+                menubar.classList.remove("active");
+                navMenu.classList.remove("active");
+            }
         </script>
-
-    </section>
-    <!--about section-->
-    <section class="aboutme" id="aboutme">
-        <div class="about">
-            <img src="image/aboutme.jpg">
-            <div class="inner-section">
-                <h1>About Me</h1>
-                <p class="text">
-                    An information technology graduate with skills in full stack development and with a deep
-                    understanding of
-                    DevOps culture, which makes me a valuable asset in today's digital landscape. AM an individual who
-                    is
-                    well-versed in a
-                    variety of programming languages and frameworks(see my skills below), allowing me to build robust
-                    and
-                    efficient
-                    applications that can run on a variety of platforms. My knowledge of both front-end and back-end
-                    development allows me to create cohesive user experiences that seamlessly integrate with
-                    underlying systems.<br>
-                    In addition to my technical abilities, am a graduate with expertise in DevOps culture and i have a
-                    unique
-                    perspective on software development. I understand the importance of collaboration between
-                    development and operations teams, as well as the value of continuous integration and deployment
-                    practices. My mindset allows me to develop applications that are not only functional but also
-                    scalable, reliable, and easy to maintain. With my combination of technical and cultural
-                    knowledge.Am an information technology graduate with full stack and DevOps skills that is poised for
-                    success in a rapidly changing industry.
-                </p>
-                <div class="skills">
-                    <a href="#contact-form"> <button class="nav-link">Hire Me</button></a>
+        <!--homepage section-->
+        <section class="hero top" id="hero">
+            <div class="hero-content">
+                <div class="heropic">
+                    <img src="image/herobuner.png">
                 </div>
-            </div>
-        </div>
-    </section>
-    <!--searchbar section-->
-    <section class="searchbar top">
-        <div>
-            <input type="text" id="search-input" placeholder="Search...">
-            <button id="search-button"><i class="fa fa-search"></i></button>
-        </div>
-        <!--script to search -->
-        <script>
-            // Get the search bar elements
-            const searchInput = document.getElementById('search-input');
-            const searchButton = document.getElementById('search-button');
-            const searchSection = document.getElementById('portfolio');
+                <div class="centered">
+                    <div class="home-page">
+                        <div class="home-text-box">
+                            <h1>Hi, am Thabang</h1>
+                            <strong class="gradient">A SOFTWARE DEVELOPER</strong><br></br>
+                            <span>As a recent graduate, i am seeking a role which allows</span>
+                            <span>me to continue learning and perfecting my skills as i</span>
+                            <span> provide high-quality work, and encourages me to flourish</span>
+                            <span>as a developer</span><br>
 
-            // Add event listener to search button
-            searchButton.addEventListener('click', function () {
-                // Get the search term and make it lowercase
-                const searchTerm = searchInput.value.toLowerCase();
-
-                // Get all the elements in the search section
-                const searchElements = searchSection.getElementsByTagName('*');
-
-                // Looping through all the elements in the search section
-                for (let i = 0; i < searchElements.length; i++) {
-                    const element = searchElements[i];
-
-                    // Checking if the element contains the search term
-                    if (element.innerText.toLowerCase().includes(searchTerm)) {
-                        // Creating a new element for each matching text node and highlight the search term
-                        const newElement = document.createElement('span');
-                        newElement.innerHTML = element.innerHTML.replace(new RegExp(`(${searchTerm})`, 'gi'), '<mark>$1</mark>');
-                        element.innerHTML = newElement.innerHTML;
-
-                        // Show the element
-                        element.style.display = 'block';
-                    } else {
-                        // Hide the element
-                        element.style.display = 'none';
-                    }
-                }
-            });
-        </script>
-
-    </section>
-    <!--portfolio section-->
-    <section class="portfolio top" id="portfolio">
-        <center>
-            <article class="motos">
-                <div class="card1">
-                    <h2><img src="image/edu.png"></h2>
-                    <p>Education's purpose is to replace an empty mind with an open one" -Malcolm Forbes-</p>
-                    <a class="" onclick="toggleDiv('div3')">
-                        <p>see my acomplishments </p>
-                    </a>
-                </div>
-
-
-
-                <div class="card1">
-                    <h2><img src="image/projects.png"></h2>
-                    <p>"Investing in yourself is the best investment you will ever make. It will not only improve your
-                        life, it will improve the lives of all those around you." - Robin Sharma</p>
-                    <a class="" onclick="toggleDiv('div2')">
-                        <p>see my skills </p>
-                    </a>
-                </div>
-
-
-
-                <div class="card1">
-                    <h2><img src="image/skill.png"></h2>
-                    <p>"The best way to predict the future is to create it." - Abraham Lincoln</p>
-                    <a class="" onclick="toggleDiv('div1')">
-                        <p>see projects </p>
-                    </a>
-                </div>
-
-            </article>
-        </center>
-        <!-- Button toggler -->
-        <div class="togglers">
-            <div class="buttons">
-                <button class="toggle-button " onclick="toggleDiv('div1')">PROJECTS</button>
-                <button class="toggle-button" onclick="toggleDiv('div2')">MY SKILLS</button>
-                <button class="toggle-button" onclick="toggleDiv('div3')">EDUCATION</button>
-
-                <!--script for the togglers-->
-                <script>
-                    function toggleDiv(id) {
-                        var divs = document.getElementsByClassName('toggled_div');
-                        for (var i = 0; i < divs.length; i++) {
-                            if (divs[i].id == id) {
-                                divs[i].style.display = '';
-                            } else {
-                                divs[i].style.display = 'none';
-                            }
-                        }
-                    }
-
-                </script>
-            </div>
-
-            <div class="toggled_space">
-                <div id="div1" class="toggled_div">
-                    <div class="grid-container">
-                        <div class="grid-item item1 parent">
-                            <div class="description">
-                                <h4>RECIPE APP</h4>
-                                <p>The Application Authenticate users ,using node.js an express for Back-end tech. I
-                                    used
-                                    bcryt to hash the password. The App allows users to add recipes and display them to
-                                    the front end for users Consumption .users can save recipes to use them when needed
-                                </p>
-                                <span><strong>STACK USED:</strong> React , Node.js ,Express.js ,mongoDB ,API calls using
-                                    fetch,async and await</span>
-                            </div>
-                            <div class="buttons">
-                                <a href="#"><button class="Demo">Demo</button></a>
-                                <a href="#"><button class="github">GitHub</button></a>
-                            </div>
-                        </div>
-                        <div class="grid-item item2 parent">
-                            <div class="description">
-                                <h4>Salary Proccesing</h4>
-                                <p>The purpose of Salary Proccesing app is to help employers manage
-                                    their employee salaries and payroll more efficiently.</p>
-                                </p>
-                                <span><strong>STACK USED:</strong> JAVA , NetBeans ,MySql ,xampp</span>
-                            </div>
-                            <div class="buttons">
-                                <a href="https://github.com/FLAVIYO/SalaryProceser" target="_blank" ><button class="github">GitHub</button></a>
-                            </div>
-                        </div>
-                        <div class="grid-item item3 parent">
-                            <div class="description">
-                                <h4>Currency Conveter</h4>
-                                <p>
-                                    The App helps user to convert our South Africa Currency(R) TO other major
-                                    Currencies like US Dollar and POUNDS
-                                </p>
-                                <span><strong>STACK USED:</strong> JAVA , INTELIJ IDEA</span>
-                            </div>
-                            <div class="buttons">
-                                <a href="https://github.com/FLAVIYO/Currency_Converter" target="_blank" ><button class="github">GitHub</button></a>
-                            </div>
-                        </div>
-                        <div class="grid-item item4 parent">
-                            <div class="description">
-                                <h4>Weather App</h4>
-                                <p>
-                                    coming soon
-                                </p>
-                                <span><strong>STACK USED:</strong>Django ,</span>
-                            </div>
-                            <div class="buttons">
-                                <a href="#"><button class="Demo">Demo</button></a>
-                                <a href="#"><button class="github">GitHub</button></a>
-                            </div>
-                        </div>
-                        <div class="grid-item item5">
-                            <a onclick="confirmRedirect()" target="_blank">
-                                <p>See My Projects &#8594; </p>
-                            </a>
-
-                            <script>
-                                function confirmRedirect() {
-                                    if (confirm("this will take you to my github!")) {
-                                        window.open('https://github.com/FLAVIYO', '_blank');
-                                    }
-                                }
-                            </script>
-                        </div>
-                    </div>
-
-                </div>
-                <div id="div2" class="toggled_div" style="display:none;">
-                    <div class="grid-container">
-                        <div class="div2-item card1">
-                            <h5>BASICS</h5>
-                            <div class="tooltip">
-                                <h6>HTML</h6>
-                                <img src="image/html.jpg" style="height:30px;" style="width:30px;"
-                                    style="border-radius:50px;">
-                                <span class="tooltiptext tooltipright">
-                                    <div class="tipcard">
-                                        <h4>HTML</h4>
-                                        <div class="progress-bar-container">
-                                            <div class="progress-bar" style="width: 90%;"></div>
-                                        </div>
-                                    </div>
-                                </span>
-                            </div>
-                            <div class="tooltip">
-                                <h6>CSS</h6>
-                                <img src="image/css.jpg" style="height:30px;" style="width:30px;"
-                                    style="border-radius:50px;">
-                                <span class="tooltiptext tooltipright">
-                                    <div class="tipcard">
-                                        <h4>CSS</h4>
-                                        <div class="progress-bar-container">
-                                            <div class="progress-bar" style="width: 70%;"></div>
-                                        </div>
-                                    </div>
-                                </span>
-                            </div>
-                            <div class="tooltip">
-                                <h6>JAVASCRIPT</h6>
-                                <img src="image/js.jpg" style="height:30px;" style="width:30px;"
-                                    style="border-radius:50px;">
-                                <span class="tooltiptext tooltipright">
-                                    <div class="tipcard">
-                                        <h4>JAVASCRIPT</h4>
-                                        <div class="progress-bar-container">
-                                            <div class="progress-bar" style="width: 55%;"></div>
-                                        </div>
-                                    </div>
-                                </span>
-                            </div>
-                        </div>
-                        <div class="div2-item card2">
-                            <h5>BACKEND</h5>
-                            <div class="tooltip">
-                                <h6>DATABASES</h6>
-                                <img src="image/database.PNG" style="height:30px;" style="width:30px;"
-                                    style="border-radius:50px;">
-                                <span class="tooltiptext tooltipbottom">
-                                    <div class="tipcard">
-                                        <h4>DATABASES</h4>
-
-                                        <h5>Mysql:</h5>
-                                        <div class="progress-bar-container">
-                                            <div class="progress-bar" style="width: 60%;"></div>
-                                        </div>
-                                        <h5>MongoDB</h5>
-                                        <div class="progress-bar-container">
-                                            <div class="progress-bar" style="width: 45%;"></div>
-                                        </div>
-                                        <h5>Oracle</h5>
-                                        <div class="progress-bar-container">
-                                            <div class="progress-bar" style="width: 50%;"></div>
-                                        </div>
-                                        <h5>PostgreSQL</h5>
-                                        <div class="progress-bar-container">
-                                            <div class="progress-bar" style="width: 30%;"></div>
-                                        </div>
-
-                                    </div>
-                                </span>
-                            </div>
-                            <div class="tooltip">
-                                <h6>EXPRESS.JS</h6>
-                                <img src="image/express.JPG" style="height:30px;" style="width:30px;"
-                                    style="border-radius:50px;">
-                                <span class="tooltiptext tooltipbottom">
-                                    <div class="tipcard">
-                                        <h4>EXPRESS.JS</h4>
-                                        <div class="progress-bar-container">
-                                            <div class="progress-bar" style="width: 50%;"></div>
-                                        </div>
-                                    </div>
-                                </span>
-                            </div>
-                            <div class="tooltip">
-                                <h6>JAVA</h6>
-                                <img src="image/java.jpg" style="height:30px;" style="width:30px;"
-                                    style="border-radius:50px;">
-                                <span class="tooltiptext tooltipbottom">
-                                    <div class="tipcard">
-                                        <h4>JAVA</h4>
-                                        <div class="progress-bar-container">
-                                            <div class="progress-bar" style="width: 60%;"></div>
-                                        </div>
-                                    </div>
-                                </span>
-                            </div>
-                            <div class="tooltip">
-                                <h6>NODE.JS</h6>
-                                <img src="image/nodejs.JPG" style="height:30px;" style="width:30px;"
-                                    style="border-radius:50px;">
-                                <span class="tooltiptext tooltipbottom">
-                                    <div class="tipcard">
-                                        <h4>NODE.JS</h4>
-                                        <div class="progress-bar-container">
-                                            <div class="progress-bar" style="width: 55%;"></div>
-                                        </div>
-                                    </div>
-                                </span>
-                            </div>
-                            <div class="tooltip">
-                                <h6>PYTHON</h6>
-                                <img src="image/python.PNG" style="height:30px;" style="width:30px;"
-                                    style="border-radius:50px;">
-                                <span class="tooltiptext tooltipbottom">
-                                    <div class="tipcard">
-                                        <h4>PYTHON</h4>
-                                        <div class="progress-bar-container">
-                                            <div class="progress-bar" style="width: 60%;"></div>
-                                        </div>
-                                    </div>
-                                </span>
-                            </div>
-                        </div>
-                        <div class="div2-item card3">
-                            <h5>DEVOPS TOOLS</h5>
-                            <div class="tooltip">
-                                <h6>GIT</h6>
-                                <img src="image/git.PNG" style="height:30px;" style="width:30px;"
-                                    style="border-radius:50px;">
-                                <span class="tooltiptext tooltipleft">
-                                    <div class="tipcard">
-                                        <h4>GIT</h4>
-                                        <div class="progress-bar-container">
-                                            <div class="progress-bar" style="width: 60%;"></div>
-                                        </div>
-                                    </div>
-                                </span>
-                            </div>
-                            <div class="tooltip">
-                                <h6>GITHUB</h6>
-                                <img src="image/github.PNG" style="height:30px;" style="width:30px;"
-                                    style="border-radius:50px;">
-                                <span class="tooltiptext tooltipleft">
-                                    <div class="tipcard">
-                                        <h4>GITHUB</h4>
-                                        <div class="progress-bar-container">
-                                            <div class="progress-bar" style="width: 60%;"></div>
-                                        </div>
-                                    </div>
-                                </span>
-                            </div>
-                            <div class="tooltip">
-                                <h6>DOCKER</h6>
-                                <img src="image/docker.PNG" style="height:30px;" style="width:30px;"
-                                    style="border-radius:50px;">
-                                <span class="tooltiptext tooltipleft">
-                                    <div class="tipcard">
-                                        <h4>PYTHON</h4>
-                                        <div class="progress-bar-container">
-                                            <div class="progress-bar" style="width: 40%;"></div>
-                                        </div>
-                                    </div>
-                                </span>
-                            </div>
-                            <div class="tooltip">
-                                <h6>AGILE PLANNING</h6>
-                                <img src="image/agile.PNG" style="height:30px;" style="width:30px;"
-                                    style="border-radius:50px;">
-                                <span class="tooltiptext tooltipleft">
-                                    <div class="tipcard">
-                                        <h4>AGILE PLANNING</h4>
-                                        <div class="progress-bar-container">
-                                            <div class="progress-bar" style="width: 65%;"></div>
-                                        </div>
-                                    </div>
-                                </span>
-                            </div>
-                        </div>
-                        <div class="div2-item card4">
-                            <h5>FRAMEWORK</h5>
-                            <div class="tooltip">
-                                <h6>REACT.JS</h6>
-                                <img src="image/react.PNG" style="height:30px;" style="width:30px;"
-                                    style="border-radius:50px;">
-                                <span class="tooltiptext tooltipright">
-                                    <div class="tipcard">
-                                        <h4>REACT.JS</h4>
-                                        <div class="progress-bar-container">
-                                            <div class="progress-bar" style="width: 50%;"></div>
-                                        </div>
-                                    </div>
-                                </span>
-                            </div>
-                            <div class="tooltip">
-                                <h6>DJANGO</h6>
-                                <img src="image/django.JPG" style="height:30px;" style="width:30px;"
-                                    style="border-radius:50px;">
-                                <span class="tooltiptext tooltipright">
-                                    <div class="tipcard">
-                                        <h4>DJANGO</h4>
-                                        <div class="progress-bar-container">
-                                            <div class="progress-bar" style="width: 90%;"></div>
-                                        </div>
-                                    </div>
-                                </span>
-                            </div>
-                            <div class="tooltip">
-                                <h6>BOOTSTRAP</h6>
-                                <img src="image/bootsrap.JPG" style="height:30px;" style="width:30px;"
-                                    style="border-radius:50px;">
-                                <span class="tooltiptext tooltipright">
-                                    <div class="tipcard">
-                                        <h4>BOOTSTRAP</h4>
-                                        <div class="progress-bar-container">
-                                            <div class="progress-bar" style="width: 60%;"></div>
-                                        </div>
-                                    </div>
-                                </span>
-                            </div>
-                            <div class="tooltip">
-                                <h6>FLASK</h6>
-                                <img src="image/flask.JPG" style="height:30px;" style="width:30px;"
-                                    style="border-radius:50px;">
-                                <span class="tooltiptext tooltipright">
-                                    <div class="tipcard">
-                                        <h4>FLASK</h4>
-                                        <div class="progress-bar-container">
-                                            <div class="progress-bar" style="width: 40%;"></div>
-                                        </div>
-                                    </div>
-                                </span>
-                            </div>
-                        </div>
-                        <div class="div2-item card5">
-                            <img src="image/skillpic.png">
-                        </div>
-                        <div class="div2-item card6">
-                            <h5>EXTRA</h5>
-                            <div class="tooltip">
-                                <h6>IDEs</h6>
-                                <img src="image/ides.JPG" style="height:30px;" style="width:30px;"
-                                    style="border-radius:50px;">
-                                <span class="tooltiptext tooltipleft">
-                                    <div class="tipcard">
-                                        <h4>IDEs</h4>
-
-                                        <h5>VS Code:</h5>
-                                        <div class="progress-bar-container">
-                                            <div class="progress-bar" style="width: 80%;"></div>
-                                        </div>
-                                        <h5>Intelij Idea</h5>
-                                        <div class="progress-bar-container">
-                                            <div class="progress-bar" style="width: 70%;"></div>
-                                        </div>
-                                        <h5>Pycharm</h5>
-                                        <div class="progress-bar-container">
-                                            <div class="progress-bar" style="width: 60%;"></div>
-                                        </div>
-                                        <h5>NetBeans</h5>
-                                        <div class="progress-bar-container">
-                                            <div class="progress-bar" style="width: 65%;"></div>
-                                        </div>
-                                    </div>
-                                </span>
-                            </div>
-                            <div class="tooltip">
-                                <h6>Application Achitecture</h6>
-                                <img src="image/architecture.PNG" style="height:30px;" style="width:30px;"
-                                    style="border-radius:50px;">
-                                <span class="tooltiptext tooltipleft">
-                                    <div class="tipcard">
-                                        <h4>Application Achitecture</h4>
-
-                                        <h5>Monoliths:</h5>
-                                        <div class="progress-bar-container">
-                                            <div class="progress-bar" style="width: 70%;"></div>
-                                        </div>
-                                        <h5>Microservices</h5>
-                                        <div class="progress-bar-container">
-                                            <div class="progress-bar" style="width: 20%;"></div>
-                                        </div>
-                                        <h5>Serverless</h5>
-                                        <div class="progress-bar-container">
-                                            <div class="progress-bar" style="width: 20%;"></div>
-                                        </div>
-                                    </div>
-                                </span>
-                            </div>
-                            <div class="tooltip">
-                                <h6>Container Orcheestration</h6>
-                                <img src="image/container.JPG" style="height:30px;" style="width:30px;"
-                                    style="border-radius:50px;">
-                                <span class="tooltiptext tooltipleft">
-                                    <div class="tipcard">
-                                        <h4>Container Orcheestration</h4>
-
-                                        <h5>Kubernetes:</h5>
-                                        <div class="progress-bar-container">
-                                            <div class="progress-bar" style="width: 30%;"></div>
-                                        </div>
-                                        <h5>OpenShift</h5>
-                                        <div class="progress-bar-container">
-                                            <div class="progress-bar" style="width: 30%;"></div>
-                                        </div>
-                                    </div>
-                                </span>
-                            </div>
-                            <div class="tooltip">
-                                <h6>Cloud Computing V..</h6>
-                                <img src="image/cloud comp.JPG" style="height:30px;" style="width:30px;"
-                                    style="border-radius:50px;">
-                                <span class="tooltiptext tooltipleft">
-                                    <div class="tipcard">
-                                        <h4>Cloud Computing V..</h4>
-
-                                        <h5>IBM Cloud</h5>
-                                        <div class="progress-bar-container">
-                                            <div class="progress-bar" style="width: 50%;"></div>
-                                        </div>
-                                        <h5>Azure</h5>
-                                        <div class="progress-bar-container">
-                                            <div class="progress-bar" style="width: 30%;"></div>
-                                        </div>
-                                    </div>
-                                </span>
+                            <!-- button to open modal -->
+                            <div class="button">
+                                <a href="#contact-form"><input id="myBtn" class="button" type="button"
+                                        value="contact me"></a>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div id="div3" class="toggled_div" style="display:none;">
-                    <div class="w3-content w3-display-container">
-                        <div class="mySlides">
-                            <div class="morphism">
-                                <div class="box">
-                                    <div class="content">
-                                        <h2>01</h2>
-                                        <h3>DIPLOMA IN INFORMATION TECHNOLOGY</h3>
-                                        <p>
-                                            <strong>
-                                                <h7>VAAL UNIVERSITY OF TECHNOLOGY</h7><br></br>
-                                            </strong>
-                                            <strong>RELEVANT COURSEWORK</strong><br>
-                                            Data Structures , Database Systems,
-                                            software development, Networking,
-                                            Operating Systems, Business analysis
-                                            Web Development,
-                                            information systems
-                                        </p>
-                                        <a onclick="showPopup2()" >SEE
-                                            CERTIFICATE</a>
-                                        <div id="popup2">
-                                            <h5 style="color:rgb(48, 94, 210);">Appologies, the certificate will be uplaoded as soon as possible
-                                                <i class="fa fa-heart" style="font-size:16px;color: red;"></i>
-                                            </h5>
-                                            <button class="button" onclick="closePopup2()">OK</button>
-                                        </div>
-                                        <script>
-                                            function showPopup2() {
-                                                document.getElementById("popup2").style.display = "block";
-                                            }
-                        
-                                            function closePopup2() {
-                                                document.getElementById("popup2").style.display = "none";
-                                            }
-                                        </script>
-                                    </div>
-                                </div>
-                                <div class="box">
-                                    <div class="content">
-                                        <h2>02</h2>
-                                        <h3>Professional certificate in IBM DevOps and Software Engineering</h3>
-                                        <p>
-                                            <strong>
-                                                <h7>COURSERA</h7><br></br>
-                                            </strong>
-                                            <strong>RELEVANT COURSEWORK</strong><br>
-                                            Introduction to Software Engineering
-                                            Introduction to agile and development and scrum Introduction to devOps
-                                            Introduction to Cloud Computing
-                                            Getting Started with Git and GitHub
-                                            Application Development using Microservices and Serverless
-                                            Hands-on Introduction to Linux Commands and Shell Scripting Application
-                                            Security and Monitoring
-                                        </p>
-                                        <a onclick="showPopup2()" >SEE
-                                            CERTIFICATE</a>
-                                        <div id="popup2">
-                                            <h5 style="color:rgb(48, 94, 210);">Appologies, the certificate will be uplaoded as soon as possible
-                                                <i class="fa fa-heart" style="font-size:16px;color: red;"></i>
-                                            </h5>
-                                            <button class="button" onclick="closePopup2()">OK</button>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="box">
-                                    <div class="content">
-                                        <h2>02</h2>
-                                        <h3>Professional certificate in IBM Full Stack Developer</h3>
-                                        <p>
-                                            <strong>
-                                                <h7>COURSERA</h7><br></br>
-                                            </strong>
-                                            <strong>RELEVANT COURSEWORK</strong><br>
-                                            Web Development with HTML, CSS, JavaScript
-                                            Developing Front-End Apps with React
-                                            Python Project for AI & Application Development
-                                            Developing Back-End Apps with Node.js and Express
-                                            Python for Data Science, AI & Development
-                                            Introduction to containers/Dockers, Kubernetes & OpenShift
-                                            Developing Applications with SQL,Databases, and Django
-                                        </p>
-                                        <a href="image/full stack.jpg" data-lightbox="models" data-title="IBM Full Stack Developer">SEE
-                                            CERTIFICATE</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="mySlides">
-                            <div class="morphism">
-                                <div class="box">
-                                    <div class="content">
-                                        <h2>03</h2>
-                                        <h3>Developing Back-End Apps with Node.js and Express</h3>
-                                        <P>
-                                            <strong>
-                                                <h7>COURSERA</h7><br></br>
-                                            </strong>
-                                            <strong>WHAT I LEARNED</strong><br>
-                                            Create server-side applications using the Node.js JavaScript run time.
-                                            Extend your Node.js applications with third-party packages and frameworks,
-                                            including Express.
-                                            Use npm to manage Node.js packages in your Node.js application.
-                                            Develop asynchronous callback functions and promises to complete
-                                            asynchronous operations.
-                                        </p>
-                                        <a href="image/Back-End Apps.jpg" data-lightbox="models" data-title="Back-End Apps with Node.js and Express">SEE
-                                            CERTIFICATE</a>
-                                    </div>
-                                </div>
-                                <div class="box">
-                                    <div class="content">
-                                        <h2>03</h2>
-                                        <h3>Introduction to DevOps</h3>
-                                        <P>
-                                            <strong>
-                                                <h7>COURSERA</h7><br></br>
-                                            </strong>
-                                            <strong>WHAT I LEARNED</strong><br>
-                                            Essential DevOps concepts: software engineering practices,
-                                            cloud native microservices, automated continuous deployments, and building
-                                            resilient code.
-                                            The importance of Continuous Integration and Continuous Delivery,
-                                            Infrastructure as Code, Test Driven Development, Behavior Driven
-                                            Development.
-                                        </p>
-                                        <a href="image/DevOps.jpg" data-lightbox="models" data-title="Introduction to DevOps">SEE
-                                            CERTIFICATE</a>
-                                    </div>
-                                </div>
-                                <div class="box">
-                                    <div class="content">
-                                        <h2>03</h2>
-                                        <h3>IIntroduction to Cloud Computing</h3>
-                                        <P>
-                                            <strong>
-                                                <h7>COURSERA</h7><br></br>
-                                            </strong>
-                                            <strong>WHAT I LEARNED</strong><br>
-                                            Define cloud computing and explain essential characteristics, history,
-                                            the business case for cloud, and the emerging technologies enabled by cloud
-                                            Explain emerging Cloud related trends including HybridMulticloud,
-                                            Microservices,
-                                            Serverless, Cloud Native, DevOps, and Application Modernization
-                                            Describe the cloud service models Describe cloud service models,
-                                            cloud deployment models, and cloud infrastructure
-                                            Create IBM Cloud account and provision an instance of cloud object storage
-                                            service to host a static webpage.
-                                        </p>
-                                        <a href="image/Cloud Computing.jpg" data-lightbox="models" data-title="IIntroduction to Cloud Computing">SEE
-                                            CERTIFICATE</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="mySlides">
-                            <div class="morphism">
-                                <div class="box">
-                                    <div class="content">
-                                        <h2>03</h2>
-                                        <h3>Introduction to Web Development with HTML, CSS, JavaScript</h3>
-                                        <p>
-                                            <strong>
-                                                <h7>COURSERA</h7><br></br>
-                                            </strong>
-                                            <strong>RELEVANT COURSEWORK</strong><br>
-                                            Describe the website development process and define terminology such as
-                                            front-end, back-end,
-                                            and full stack developers.
-                                            Identify the developer tools and integrated development environments (IDEs)
-                                            used by web developers.
-                                            Create and structure basic web pages using HTML and style them with CSS.
-                                            Develop dynamic web pages with interactive features using JavaScript.
-                                        </p>
-                                        <a href="image/Web Development.jpg" data-lightbox="models" data-title="Introduction to Web Development with HTML, CSS, JavaScript">SEE
-                                            CERTIFICATE</a>
-                                    </div>
-                                </div>
-                                <div class="box">
-                                    <div class="content">
-                                        <h2>03</h2>
-                                        <h3>Getting Started with Git and GitHub</h3>
-                                        <p>
-                                            <strong>
-                                                <h7>COURSERA</h7><br></br>
-                                            </strong>
-                                            <strong>RELEVANT COURSEWORK</strong><br>
-                                            Describe version control and its place in social and collaborative coding
-                                            and in DevOps.
-                                            Explain basic Git concepts such as repositories and branches used for
-                                            distributed version control and social coding.
-                                            Create GitHub repositories and branches, and perform pull requests (PRs) and
-                                            merge operations, to collaborate on a team project.
-                                            Build A portfolio by creating and sharing an open-source project on GitHub
-                                        </p>
-                                        <a href="image/Git and GitHub.jpg" data-lightbox="models" data-title="Getting Started with Git and GitHub">SEE
-                                            CERTIFICATE</a>
-                                    </div>
-                                </div>
-                                <div class="box">
-                                    <div class="content">
-                                        <h2>03</h2>
-                                        <h3>Python for Data Science, AI & Development</h3>
-                                        <p>
-                                            <strong>
-                                                <h7>COURSERA</h7><br></br>
-                                            </strong>
-                                            <strong>RELEVANT COURSEWORK</strong><br>
-                                            Describe Python Basics including Data Types, Expressions, Variables, and
-                                            Data Structures.
-                                            Apply Python programming logic using Branching, Loops, Functions, Objects &
-                                            Classes.
-                                            Demonstrate proficiency in using Python libraries such as Pandas, Numpy, and
-                                            Beautiful Soup.
-                                            Access web data using APIs and web scraping from Python in Jupyter
-                                            Notebooks.
-                                        </p>
-                                        <a href="image/Data Science, Al.jpg" data-lightbox="models" data-title="Python for Data Science, AI & Development">SEE
-                                            CERTIFICATE</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="mySlides">
-                            <div class="morphism">
-                                <div class="box">
-                                    <div class="content">
-                                        <h2>03</h2>
-                                        <h3>Introduction to Agile Development and Scrum</h3>
-                                        <p>
-                                            <strong>
-                                                <h7>COURSERA</h7><br></br>
-                                            </strong>
-                                            <strong>RELEVANT COURSEWORK</strong><br>
-                                            Adopt the 5 practices of Agile, a subset of DevOps: small batches, minimum
-                                            viable product,
-                                            pair programming, behavior- and test-driven development.
-                                            Write good user stories, estimate and assign story points and track stories
-                                            using a kanban board.
-                                            Incorporate Scrum artifacts, events, and benefits.
-                                            Create and refine a product backlog using the sprint planning process.
-                                            Produce potentially shippable product increments with every iteration.
-                                            Create burndown charts to forecast the ability to meet a sprint goal. Use
-                                            metrics to enhance performance,
-                                            productivity, and client satisfaction.
-                                        </p>
-                                        <a href="image/Agile Development.jpg" data-lightbox="models" data-title="Introduction to Agile Development and Scrum">SEE
-                                            CERTIFICATE</a>
-                                    </div>
-                                </div>
-                                <div class="box">
-                                    <div class="content">
-                                        <h2>03</h2>
-                                        <h3>Introduction to Containers w/ Docker, Kubernetes & OpenShift</h3>
-                                        <p>
-                                            <strong>
-                                                <h7>COURSERA</h7><br></br>
-                                            </strong>
-                                            <strong>RELEVANT COURSEWORK</strong><br>
-                                            Containers and Containerization
-                                            Kubernetes Basics
-                                            Managing Applications with Kubernetes
-                                            The Kubernetes Ecosystem: OpenShift, Istio, etc.
-                                        </p>
-                                        <a href="image/Containers w: Docker,.jpg" data-lightbox="models" data-title="Introduction to Containers w/ Docker, Kubernetes & OpenShift">SEE
-                                            CERTIFICATE</a>
-                                    </div>
-                                </div>
-                                <div class="box">
-                                    <div class="content">
-                                        <h2>03</h2>
-                                        <h3>Application Development using Microservices and Serverless</h3>
-                                        <p>
-                                            <strong>
-                                                <h7>COURSERA</h7><br></br>
-                                            </strong>
-                                            <strong>RELEVANT COURSEWORK</strong><br>
-                                            Introduction to Microservices
-                                            Introduction to Microservices
-                                            Serverless Overview
-                                            Create and Deploy Microservices
-                                            OpenShift Essentials/Working with OpenShift and Istio
-                                        </p>
-                                        <a href="image/using Microservices.jpg" data-lightbox="models" data-title=">Application Development using Microservices and Serverless">SEE
-                                            CERTIFICATE</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="mySlides">
-                            <div class="morphism">
-                                <div class="box">
-                                    <div class="content">
-                                        <h2>03</h2>
-                                        <h3>Developing Front-End Apps with React</h3>
-                                        <p>
-                                            <strong>
-                                                <h7>COURSERA</h7><br></br>
-                                            </strong>
-                                            <strong>RELEVANT COURSEWORK</strong><br>
-                                            Building Rich Front-End Applications with React and ES6
-                                            React Components
-                                            Advanced React
-                                            learn how to break down a UI into React components and become familiar with
-                                            state using the Context API.
-                                            Furthermore, you will explore actions, reducers, and the dispatch function
-                                        </p>
-                                        <a href="image/Front-End Apps.jpg" data-lightbox="models" data-title="Developing Front-End Apps with React">SEE
-                                            CERTIFICATE</a>
-                                    </div>
-                                </div>
-                                <div class="box">
-                                    <div class="content">
-                                        <h2>03</h2>
-                                        <h3>Python Project for AI & Application Development</h3>
-                                        <p>
-                                            <strong>
-                                                <h7>COURSERA</h7><br></br>
-                                            </strong>
-                                            <strong>RELEVANT COURSEWORK</strong><br>
-                                            Python - Unit testing, module packaging and web application development,
-                                            introduced to the process of packaging, unit testing in Python and Flask, a
-                                            microweb framework,
-                                            the creation of web applications using flask. Packaging allows the Cloud
-                                            Application Developer
-                                            to produce a coding unit that can be tested and integrated into a codebase.
-                                            Unit testing assures
-                                            that code is error-free and integrates properly within a larger project.
-                                            Flask is an open-source python package that allows you to create web
-                                            applications.
-                                        </p>
-                                        <a href="image/Python Project for Al.jpeg" data-lightbox="models" data-title="Python Project for AI & Application Development">SEE
-                                            CERTIFICATE</a>
-                                    </div>
-                                </div>
-                                <div class="box">
-                                    <div class="content">
-                                        <h2>03</h2>
-                                        <h3>Developing Applications with SQL, Databases, and Django</h3>
-                                        <p>
-                                            <strong>
-                                                <h7>COURSERA</h7><br></br>
-                                            </strong>
-                                            <strong>RELEVANT COURSEWORK</strong><br>
-                                            Getting Started with SQL & Relational Databases
-                                            ORM: Bridging the Gap Between the Real World and Relational Model
-                                            Full-stack Django Development
-                                            Consolidate and Deploy Your Django App
-                                            Final Project: Enhance Online Course App with New Features
-                                        </p>
-                                        <a href="image/sql and django.jpg" data-lightbox="models" data-title="Developing Applications with SQL, Databases, and Django">SEE
-                                            CERTIFICATE</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!--slider buttons-->
-                        <button class="w3-button w3-black w3-display-left" onclick="plusDivs(-1)">&#10094;</button>
-                        <button class="w3-button w3-black w3-display-right" onclick="plusDivs(1)">&#10095;</button>
-
-
-                        <!--script-->
-                        <script>
-                            var slideIndex = 1;
-                            showDivs(slideIndex);
-
-                            function plusDivs(n) {
-                                showDivs(slideIndex += n);
-                            }
-
-                            function showDivs(n) {
-                                var i;
-                                var x = document.getElementsByClassName("mySlides");
-                                if (n > x.length) { slideIndex = 1 }
-                                if (n < 1) { slideIndex = x.length }
-                                for (i = 0; i < x.length; i++) {
-                                    x[i].style.display = "none";
-                                }
-                                x[slideIndex - 1].style.display = "block";
-                            }
-                        </script>
-
-                    </div>
-                </div>
-            </div>
-
-    </section>
-    <!--contact section-->
-    <section class="contact_form ">
-        <div class="contact-form-container" id="contact-form">
-            <div class="contact-details">
-                <center>
-                    <br>
-                    <a href="image/profile.JPG" data-lightbox="models" data-title="profile">
-                        <img src="image/profile.JPG" width="70px" height="75px" border-radius="10px" ; alt="">
-                    </a>
-
-                    <br>
-                    <h2>Thabang Shongwe</h2>
-                    <h4>Software Developer</h4><br>
-                    <p><i class="fas fa-phone"></i> +27693213995</p>
-                    <p><i class="fas fa-envelope"></i> shongwe1408@gmail.com</p>
-                    <p><i class="fas fa-map-marker-alt"></i> Gauteng ,South Africa</p>
-                </center>
-
                 <div class="social-icons">
+                    <a href="https://github.com/FLAVIYO" target="_blank"><i class="fab fa-github"></i></a>
                     <a href="https://www.facebook.com/dimaria.junior.7?mibextid=LQQJ4d" target="_blank"><i
                             class="fab fa-facebook-f"></i></a>
-                    <a href="https://api.whatsapp.com/send?phone=27693213995" target="_blank"><i
+                    <a href="https://api.whatsapp.com/send?phone=+27693213995" target="_blank"><i
                             class="fab fa-whatsapp"></i></a>
                     <a href="https://twitter.com/@flaviyo1" target="_blank"><i class="fab fa-twitter"></i></a>
                     <a href="https://instagram.com/bhut.flava?igshid=YmMyMTA2M2Y=" target="_blank"><i
@@ -1106,140 +97,1204 @@
                             class="fab fa-linkedin"></i></a>
                 </div>
 
+        </section>
+        <!--number count saction-->
+        <section class="counter top">
+            <div class="counters">
+                <h1><span class="count">0</span>+ </h1>
+                <i class="fa fa-folder-open-o" style="font-size:48px;"></i>
+                <h3>Projects Completed</h3>
             </div>
-            <div class="send-message">
-                <h2>Send a Message</h2>
-                <form id="contact-form">
-                    <label for="name">Name</label>
-                    <input type="text" id="name" name="name" required>
-                    <label for="email">Email</label>
-                    <input type="email" id="email" name="email" required>
-                    <label for="message">Message</label>
-                    <textarea id="message" name="message" required></textarea>
-                    <button onclick="showPopup()" type="submit">Send</button>
-                </form>
-                <div id="popup">
-                    <h5 style="color:rgb(48, 94, 210);">Appologies, you can't send me text at the moment.As we being
-                        hosted on github pages ,Please use the numbers or email provided on left.
-                        thank you for your understanding, have a lovely day <i class="fa fa-heart"
-                            style="font-size:16px;color: red;"></i></h5>
-                    <button class="button" onclick="closePopup()">OK</button>
-                </div>
-                <script>
-                    function showPopup() {
-                        document.getElementById("popup").style.display = "block";
-                    }
-
-                    function closePopup() {
-                        document.getElementById("popup").style.display = "none";
-                    }
-                </script>
+            <div class="counters">
+                <h1><span class="count2">0</span>+ hours</h1>
+                <i class="fa fa-spinner" style="font-size:48px;"></i>
+                <h3>Develoment Time</h3>
             </div>
+            <div class="counters">
+                <h1><span class="count3">0</span>+ Lines</h1>
+                <i class="fa fa-code" style="font-size:48px;"></i>
+                <h3>Lines Of Code</h3>
+            </div>
+            <div class="counters">
+                <h1><span class="count4">0</span>years</h1>
+                <i class="fa fa-calendar-o" style="font-size:48px;"></i>
+                <h3>Industry Experience</h3>
+            </div>
+            <!--script for the counter-->
             <script>
-                document.addEventListener('DOMContentLoaded', function () {
-                    const form = document.getElementById('contact-form');
 
-                    if (form !== null) {
-                        form.addEventListener('submit', (e) => {
-                            e.preventDefault();
-                            const name = form.name.value.trim();
-                            const email = form.email.value.trim();
-                            const message = form.message.value.trim();
+                function animateValue(obj, start, end, duration) {
+                    let startTimestamp = null;
+                    const step = (timestamp) => {
+                        if (!startTimestamp) startTimestamp = timestamp;
+                        const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+                        const value = Math.floor(progress * (end - start) + start);
+                        obj.innerHTML = value;
+                        if (progress < 1) {
+                            window.requestAnimationFrame(step);
+                        }
+                    };
+                    window.requestAnimationFrame(step);
+                }
+                const count4 = document.querySelector(".count4");
+                animateValue(count4, 0, 0, 1000);
+                const count3 = document.querySelector(".count3");
+                animateValue(count3, 0, 5000, 2000);
+                const count2 = document.querySelector(".count2");
+                animateValue(count2, 0, 2000, 2000);
+                const count = document.querySelector(".count");
+                animateValue(count, 0, 12, 2000); // change the start, end, and duration values as needed
 
-                            // Validation
-                            if (name === '' || email === '' || message === '') {
-                                alert('Please fill in all fields.');
-                                return;
-                            }
+            </script>
 
-                            // Send email
-                            // You can use an API or a server-side script to send the email
-                            alert('Your message has been sent!');
-                            form.reset();
-                        });
+        </section>
+        <!--about section-->
+        <section class="aboutme" id="aboutme">
+            <div class="about">
+                <img src="image/aboutme.jpg">
+                <div class="inner-section">
+                    <h1>About Me</h1>
+                    <p class="text">
+                        An information technology graduate with skills in full stack development and with a deep
+                        understanding of
+                        DevOps culture, which makes me a valuable asset in today's digital landscape. AM an individual
+                        who
+                        is
+                        well-versed in a
+                        variety of programming languages and frameworks(see my skills below), allowing me to build
+                        robust
+                        and
+                        efficient
+                        applications that can run on a variety of platforms. My knowledge of both front-end and back-end
+                        development allows me to create cohesive user experiences that seamlessly integrate with
+                        underlying systems.<br>
+                        In addition to my technical abilities, am a graduate with expertise in DevOps culture and i have
+                        a
+                        unique
+                        perspective on software development. I understand the importance of collaboration between
+                        development and operations teams, as well as the value of continuous integration and deployment
+                        practices. My mindset allows me to develop applications that are not only functional but also
+                        scalable, reliable, and easy to maintain. With my combination of technical and cultural
+                        knowledge.Am an information technology graduate with full stack and DevOps skills that is poised
+                        for
+                        success in a rapidly changing industry.
+                    </p>
+                    <div class="skills">
+                        <a href="#contact-form"> <button class="nav-link">Hire Me</button></a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--searchbar section-->
+        <section class="searchbar top">
+            <div>
+                <input type="text" id="search-input" placeholder="Search...">
+                <button id="search-button"><i class="fa fa-search"></i></button>
+            </div>
+            <!--script to search -->
+            <script>
+                // Get the search bar elements
+                const searchInput = document.getElementById('search-input');
+                const searchButton = document.getElementById('search-button');
+                const searchSection = document.getElementById('portfolio');
+
+                // Add event listener to search button
+                searchButton.addEventListener('click', function () {
+                    // Get the search term and make it lowercase
+                    const searchTerm = searchInput.value.toLowerCase();
+
+                    // Get all the elements in the search section
+                    const searchElements = searchSection.getElementsByTagName('*');
+
+                    // Looping through all the elements in the search section
+                    for (let i = 0; i < searchElements.length; i++) {
+                        const element = searchElements[i];
+
+                        // Checking if the element contains the search term
+                        if (element.innerText.toLowerCase().includes(searchTerm)) {
+                            // Creating a new element for each matching text node and highlight the search term
+                            const newElement = document.createElement('span');
+                            newElement.innerHTML = element.innerHTML.replace(new RegExp(`(${searchTerm})`, 'gi'), '<mark>$1</mark>');
+                            element.innerHTML = newElement.innerHTML;
+
+                            // Show the element
+                            element.style.display = 'block';
+                        } else {
+                            // Hide the element
+                            element.style.display = 'none';
+                        }
                     }
                 });
             </script>
 
-    </section>
+        </section>
+        <!--portfolio section-->
+        <section class="portfolio top" id="portfolio">
+            <center>
+                <article class="motos">
+                    <div class="card1">
+                        <h2><img src="image/edu.png"></h2>
+                        <p>Education's purpose is to replace an empty mind with an open one" -Malcolm Forbes-</p>
+                        <a class="" onclick="toggleDiv('div3')">
+                            <p>see my acomplishments </p>
+                        </a>
+                    </div>
 
-    <!--Modal-->
-    <div id="myModal2" class="modal">
-        <div class="modal-content">
-            <span id="close" class="close">&times;</span>
-            <h3>Intermediate Python</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eget semper libero, ut
-                maximus lorem. Praesent pulvinar, dolor vel ultrices suscipit, ante ipsum mollis
-                dolor, at blandit quam urna in lacus. Morbi commodo, velit ac commodo tincidunt,
-                eros elit tempor elit, nec sollicitudin elit ipsum vel lorem. Duis in dignissim
-                nibh. Nunc commodo felis sed enim hendrerit commodo. Etiam id fermentum est. Sed at
-                odio purus. Morbi commodo commodo mi, vel auctor augue pellentesque a. Nam
-                vestibulum euismod dapibus. Sed at nisi ac orci faucibus bibendum. Nullam sit amet
-                augue massa. Sed dignissim tellus eget est euismod, vel auctor augue dignissim.</p>
+
+
+                    <div class="card1">
+                        <h2><img src="image/projects.png"></h2>
+                        <p>"Investing in yourself is the best investment you will ever make. It will not only improve
+                            your
+                            life, it will improve the lives of all those around you." - Robin Sharma</p>
+                        <a class="" onclick="toggleDiv('div2')">
+                            <p>see my skills </p>
+                        </a>
+                    </div>
+
+
+
+                    <div class="card1">
+                        <h2><img src="image/skill.png"></h2>
+                        <p>"The best way to predict the future is to create it." - Abraham Lincoln</p>
+                        <a class="" onclick="toggleDiv('div1')">
+                            <p>see projects </p>
+                        </a>
+                    </div>
+
+                </article>
+            </center>
+            <!-- Button toggler -->
+            <div class="togglers">
+                <div class="buttons">
+                    <button class="toggle-button " onclick="toggleDiv('div1')">PROJECTS</button>
+                    <button class="toggle-button" onclick="toggleDiv('div2')">MY SKILLS</button>
+                    <button class="toggle-button" onclick="toggleDiv('div3')">EDUCATION</button>
+
+                    <!--script for the togglers-->
+                    <script>
+                        function toggleDiv(id) {
+                            var divs = document.getElementsByClassName('toggled_div');
+                            for (var i = 0; i < divs.length; i++) {
+                                if (divs[i].id == id) {
+                                    divs[i].style.display = '';
+                                } else {
+                                    divs[i].style.display = 'none';
+                                }
+                            }
+                        }
+
+                    </script>
+                </div>
+
+                <div class="toggled_space">
+                    <div id="div1" class="toggled_div">
+                        <div class="grid-container">
+                            <div class="grid-item item1 parent">
+                                <div class="description">
+                                    <h4>RECIPE APP</h4>
+                                    <p>The Application Authenticate users ,using node.js an express for Back-end tech. I
+                                        used
+                                        bcryt to hash the password. The App allows users to add recipes and display them
+                                        to
+                                        the front end for users Consumption .users can save recipes to use them when
+                                        needed
+                                    </p>
+                                    <span><strong>STACK USED:</strong> React , Node.js ,Express.js ,mongoDB ,API calls
+                                        using
+                                        fetch,async and await</span>
+                                </div>
+                                <div class="buttons">
+                                    <a href="#"><button class="Demo">Demo</button></a>
+                                    <a href="#"><button class="github">GitHub</button></a>
+                                </div>
+                            </div>
+                            <div class="grid-item item2 parent">
+                                <div class="description">
+                                    <h4>Salary Proccesing</h4>
+                                    <p>The purpose of Salary Proccesing app is to help employers manage
+                                        their employee salaries and payroll more efficiently.</p>
+                                    </p>
+                                    <span><strong>STACK USED:</strong> JAVA , NetBeans ,MySql ,xampp</span>
+                                </div>
+                                <div class="buttons">
+                                    <a href="https://github.com/FLAVIYO/SalaryProceser" target="_blank"><button
+                                            class="github">GitHub</button></a>
+                                </div>
+                            </div>
+                            <div class="grid-item item3 parent">
+                                <div class="description">
+                                    <h4>Currency Conveter</h4>
+                                    <p>
+                                        The App helps user to convert our South Africa Currency(R) TO other major
+                                        Currencies like US Dollar and POUNDS
+                                    </p>
+                                    <span><strong>STACK USED:</strong> JAVA , INTELIJ IDEA</span>
+                                </div>
+                                <div class="buttons">
+                                    <a href="https://github.com/FLAVIYO/Currency_Converter" target="_blank"><button
+                                            class="github">GitHub</button></a>
+                                </div>
+                            </div>
+                            <div class="grid-item item4 parent">
+                                <div class="description">
+                                    <h4>Weather App</h4>
+                                    <p>
+                                        coming soon
+                                    </p>
+                                    <span><strong>STACK USED:</strong>Django ,</span>
+                                </div>
+                                <div class="buttons">
+                                    <a href="#"><button class="Demo">Demo</button></a>
+                                    <a href="#"><button class="github">GitHub</button></a>
+                                </div>
+                            </div>
+                            <div class="grid-item item5">
+                                <a onclick="confirmRedirect()" target="_blank">
+                                    <p>See My Projects &#8594; </p>
+                                </a>
+
+                                <script>
+                                    function confirmRedirect() {
+                                        if (confirm("this will take you to my github!")) {
+                                            window.open('https://github.com/FLAVIYO', '_blank');
+                                        }
+                                    }
+                                </script>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div id="div2" class="toggled_div" style="display:none;">
+                        <div class="grid-container">
+                            <div class="div2-item card1">
+                                <h5>BASICS</h5>
+                                <div class="tooltip">
+                                    <h6>HTML</h6>
+                                    <img src="image/html.jpg" style="height:30px;" style="width:30px;"
+                                        style="border-radius:50px;">
+                                    <span class="tooltiptext tooltipright">
+                                        <div class="tipcard">
+                                            <h4>HTML</h4>
+                                            <div class="progress-bar-container">
+                                                <div class="progress-bar" style="width: 90%;"></div>
+                                            </div>
+                                        </div>
+                                    </span>
+                                </div>
+                                <div class="tooltip">
+                                    <h6>CSS</h6>
+                                    <img src="image/css.jpg" style="height:30px;" style="width:30px;"
+                                        style="border-radius:50px;">
+                                    <span class="tooltiptext tooltipright">
+                                        <div class="tipcard">
+                                            <h4>CSS</h4>
+                                            <div class="progress-bar-container">
+                                                <div class="progress-bar" style="width: 70%;"></div>
+                                            </div>
+                                        </div>
+                                    </span>
+                                </div>
+                                <div class="tooltip">
+                                    <h6>JAVASCRIPT</h6>
+                                    <img src="image/js.jpg" style="height:30px;" style="width:30px;"
+                                        style="border-radius:50px;">
+                                    <span class="tooltiptext tooltipright">
+                                        <div class="tipcard">
+                                            <h4>JAVASCRIPT</h4>
+                                            <div class="progress-bar-container">
+                                                <div class="progress-bar" style="width: 55%;"></div>
+                                            </div>
+                                        </div>
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="div2-item card2">
+                                <h5>BACKEND</h5>
+                                <div class="tooltip">
+                                    <h6>DATABASES</h6>
+                                    <img src="image/database.PNG" style="height:30px;" style="width:30px;"
+                                        style="border-radius:50px;">
+                                    <span class="tooltiptext tooltipbottom">
+                                        <div class="tipcard">
+                                            <h4>DATABASES</h4>
+
+                                            <h5>Mysql:</h5>
+                                            <div class="progress-bar-container">
+                                                <div class="progress-bar" style="width: 60%;"></div>
+                                            </div>
+                                            <h5>MongoDB</h5>
+                                            <div class="progress-bar-container">
+                                                <div class="progress-bar" style="width: 45%;"></div>
+                                            </div>
+                                            <h5>Oracle</h5>
+                                            <div class="progress-bar-container">
+                                                <div class="progress-bar" style="width: 50%;"></div>
+                                            </div>
+                                            <h5>PostgreSQL</h5>
+                                            <div class="progress-bar-container">
+                                                <div class="progress-bar" style="width: 30%;"></div>
+                                            </div>
+
+                                        </div>
+                                    </span>
+                                </div>
+                                <div class="tooltip">
+                                    <h6>EXPRESS.JS</h6>
+                                    <img src="image/express.JPG" style="height:30px;" style="width:30px;"
+                                        style="border-radius:50px;">
+                                    <span class="tooltiptext tooltipbottom">
+                                        <div class="tipcard">
+                                            <h4>EXPRESS.JS</h4>
+                                            <div class="progress-bar-container">
+                                                <div class="progress-bar" style="width: 50%;"></div>
+                                            </div>
+                                        </div>
+                                    </span>
+                                </div>
+                                <div class="tooltip">
+                                    <h6>JAVA</h6>
+                                    <img src="image/java.jpg" style="height:30px;" style="width:30px;"
+                                        style="border-radius:50px;">
+                                    <span class="tooltiptext tooltipbottom">
+                                        <div class="tipcard">
+                                            <h4>JAVA</h4>
+                                            <div class="progress-bar-container">
+                                                <div class="progress-bar" style="width: 60%;"></div>
+                                            </div>
+                                        </div>
+                                    </span>
+                                </div>
+                                <div class="tooltip">
+                                    <h6>NODE.JS</h6>
+                                    <img src="image/nodejs.JPG" style="height:30px;" style="width:30px;"
+                                        style="border-radius:50px;">
+                                    <span class="tooltiptext tooltipbottom">
+                                        <div class="tipcard">
+                                            <h4>NODE.JS</h4>
+                                            <div class="progress-bar-container">
+                                                <div class="progress-bar" style="width: 55%;"></div>
+                                            </div>
+                                        </div>
+                                    </span>
+                                </div>
+                                <div class="tooltip">
+                                    <h6>PYTHON</h6>
+                                    <img src="image/python.PNG" style="height:30px;" style="width:30px;"
+                                        style="border-radius:50px;">
+                                    <span class="tooltiptext tooltipbottom">
+                                        <div class="tipcard">
+                                            <h4>PYTHON</h4>
+                                            <div class="progress-bar-container">
+                                                <div class="progress-bar" style="width: 60%;"></div>
+                                            </div>
+                                        </div>
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="div2-item card3">
+                                <h5>DEVOPS TOOLS</h5>
+                                <div class="tooltip">
+                                    <h6>GIT</h6>
+                                    <img src="image/git.PNG" style="height:30px;" style="width:30px;"
+                                        style="border-radius:50px;">
+                                    <span class="tooltiptext tooltipleft">
+                                        <div class="tipcard">
+                                            <h4>GIT</h4>
+                                            <div class="progress-bar-container">
+                                                <div class="progress-bar" style="width: 60%;"></div>
+                                            </div>
+                                        </div>
+                                    </span>
+                                </div>
+                                <div class="tooltip">
+                                    <h6>GITHUB</h6>
+                                    <img src="image/github.PNG" style="height:30px;" style="width:30px;"
+                                        style="border-radius:50px;">
+                                    <span class="tooltiptext tooltipleft">
+                                        <div class="tipcard">
+                                            <h4>GITHUB</h4>
+                                            <div class="progress-bar-container">
+                                                <div class="progress-bar" style="width: 60%;"></div>
+                                            </div>
+                                        </div>
+                                    </span>
+                                </div>
+                                <div class="tooltip">
+                                    <h6>DOCKER</h6>
+                                    <img src="image/docker.PNG" style="height:30px;" style="width:30px;"
+                                        style="border-radius:50px;">
+                                    <span class="tooltiptext tooltipleft">
+                                        <div class="tipcard">
+                                            <h4>PYTHON</h4>
+                                            <div class="progress-bar-container">
+                                                <div class="progress-bar" style="width: 40%;"></div>
+                                            </div>
+                                        </div>
+                                    </span>
+                                </div>
+                                <div class="tooltip">
+                                    <h6>AGILE PLANNING</h6>
+                                    <img src="image/agile.PNG" style="height:30px;" style="width:30px;"
+                                        style="border-radius:50px;">
+                                    <span class="tooltiptext tooltipleft">
+                                        <div class="tipcard">
+                                            <h4>AGILE PLANNING</h4>
+                                            <div class="progress-bar-container">
+                                                <div class="progress-bar" style="width: 65%;"></div>
+                                            </div>
+                                        </div>
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="div2-item card4">
+                                <h5>FRAMEWORK</h5>
+                                <div class="tooltip">
+                                    <h6>REACT.JS</h6>
+                                    <img src="image/react.PNG" style="height:30px;" style="width:30px;"
+                                        style="border-radius:50px;">
+                                    <span class="tooltiptext tooltipright">
+                                        <div class="tipcard">
+                                            <h4>REACT.JS</h4>
+                                            <div class="progress-bar-container">
+                                                <div class="progress-bar" style="width: 50%;"></div>
+                                            </div>
+                                        </div>
+                                    </span>
+                                </div>
+                                <div class="tooltip">
+                                    <h6>DJANGO</h6>
+                                    <img src="image/django.JPG" style="height:30px;" style="width:30px;"
+                                        style="border-radius:50px;">
+                                    <span class="tooltiptext tooltipright">
+                                        <div class="tipcard">
+                                            <h4>DJANGO</h4>
+                                            <div class="progress-bar-container">
+                                                <div class="progress-bar" style="width: 90%;"></div>
+                                            </div>
+                                        </div>
+                                    </span>
+                                </div>
+                                <div class="tooltip">
+                                    <h6>BOOTSTRAP</h6>
+                                    <img src="image/bootsrap.JPG" style="height:30px;" style="width:30px;"
+                                        style="border-radius:50px;">
+                                    <span class="tooltiptext tooltipright">
+                                        <div class="tipcard">
+                                            <h4>BOOTSTRAP</h4>
+                                            <div class="progress-bar-container">
+                                                <div class="progress-bar" style="width: 60%;"></div>
+                                            </div>
+                                        </div>
+                                    </span>
+                                </div>
+                                <div class="tooltip">
+                                    <h6>FLASK</h6>
+                                    <img src="image/flask.JPG" style="height:30px;" style="width:30px;"
+                                        style="border-radius:50px;">
+                                    <span class="tooltiptext tooltipright">
+                                        <div class="tipcard">
+                                            <h4>FLASK</h4>
+                                            <div class="progress-bar-container">
+                                                <div class="progress-bar" style="width: 40%;"></div>
+                                            </div>
+                                        </div>
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="div2-item card5">
+                                <img src="image/skillpic.png">
+                            </div>
+                            <div class="div2-item card6">
+                                <h5>EXTRA</h5>
+                                <div class="tooltip">
+                                    <h6>IDEs</h6>
+                                    <img src="image/ides.JPG" style="height:30px;" style="width:30px;"
+                                        style="border-radius:50px;">
+                                    <span class="tooltiptext tooltipleft">
+                                        <div class="tipcard">
+                                            <h4>IDEs</h4>
+
+                                            <h5>VS Code:</h5>
+                                            <div class="progress-bar-container">
+                                                <div class="progress-bar" style="width: 80%;"></div>
+                                            </div>
+                                            <h5>Intelij Idea</h5>
+                                            <div class="progress-bar-container">
+                                                <div class="progress-bar" style="width: 70%;"></div>
+                                            </div>
+                                            <h5>Pycharm</h5>
+                                            <div class="progress-bar-container">
+                                                <div class="progress-bar" style="width: 60%;"></div>
+                                            </div>
+                                            <h5>NetBeans</h5>
+                                            <div class="progress-bar-container">
+                                                <div class="progress-bar" style="width: 65%;"></div>
+                                            </div>
+                                        </div>
+                                    </span>
+                                </div>
+                                <div class="tooltip">
+                                    <h6>Application Achitecture</h6>
+                                    <img src="image/architecture.PNG" style="height:30px;" style="width:30px;"
+                                        style="border-radius:50px;">
+                                    <span class="tooltiptext tooltipleft">
+                                        <div class="tipcard">
+                                            <h4>Application Achitecture</h4>
+
+                                            <h5>Monoliths:</h5>
+                                            <div class="progress-bar-container">
+                                                <div class="progress-bar" style="width: 70%;"></div>
+                                            </div>
+                                            <h5>Microservices</h5>
+                                            <div class="progress-bar-container">
+                                                <div class="progress-bar" style="width: 20%;"></div>
+                                            </div>
+                                            <h5>Serverless</h5>
+                                            <div class="progress-bar-container">
+                                                <div class="progress-bar" style="width: 20%;"></div>
+                                            </div>
+                                        </div>
+                                    </span>
+                                </div>
+                                <div class="tooltip">
+                                    <h6>Container Orcheestration</h6>
+                                    <img src="image/container.JPG" style="height:30px;" style="width:30px;"
+                                        style="border-radius:50px;">
+                                    <span class="tooltiptext tooltipleft">
+                                        <div class="tipcard">
+                                            <h4>Container Orcheestration</h4>
+
+                                            <h5>Kubernetes:</h5>
+                                            <div class="progress-bar-container">
+                                                <div class="progress-bar" style="width: 30%;"></div>
+                                            </div>
+                                            <h5>OpenShift</h5>
+                                            <div class="progress-bar-container">
+                                                <div class="progress-bar" style="width: 30%;"></div>
+                                            </div>
+                                        </div>
+                                    </span>
+                                </div>
+                                <div class="tooltip">
+                                    <h6>Cloud Computing V..</h6>
+                                    <img src="image/cloud comp.JPG" style="height:30px;" style="width:30px;"
+                                        style="border-radius:50px;">
+                                    <span class="tooltiptext tooltipleft">
+                                        <div class="tipcard">
+                                            <h4>Cloud Computing V..</h4>
+
+                                            <h5>IBM Cloud</h5>
+                                            <div class="progress-bar-container">
+                                                <div class="progress-bar" style="width: 50%;"></div>
+                                            </div>
+                                            <h5>Azure</h5>
+                                            <div class="progress-bar-container">
+                                                <div class="progress-bar" style="width: 30%;"></div>
+                                            </div>
+                                        </div>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="div3" class="toggled_div" style="display:none;">
+                        <div class="w3-content w3-display-container">
+                            <div class="mySlides">
+                                <div class="morphism">
+                                    <div class="box">
+                                        <div class="content">
+                                            <h2>01</h2>
+                                            <h3>DIPLOMA IN INFORMATION TECHNOLOGY</h3>
+                                            <p>
+                                                <strong>
+                                                    <h7>VAAL UNIVERSITY OF TECHNOLOGY</h7><br></br>
+                                                </strong>
+                                                <strong>RELEVANT COURSEWORK</strong><br>
+                                                Data Structures , Database Systems,
+                                                software development, Networking,
+                                                Operating Systems, Business analysis
+                                                Web Development,
+                                                information systems
+                                            </p>
+                                            <a onclick="showPopup2()">SEE
+                                                CERTIFICATE</a>
+                                            <div id="popup2">
+                                                <h5 style="color:rgb(48, 94, 210);">Appologies, the certificate will be
+                                                    uplaoded as soon as possible
+                                                    <i class="fa fa-heart" style="font-size:16px;color: red;"></i>
+                                                </h5>
+                                                <button class="button" onclick="closePopup2()">OK</button>
+                                            </div>
+                                            <script>
+                                                function showPopup2() {
+                                                    document.getElementById("popup2").style.display = "block";
+                                                }
+
+                                                function closePopup2() {
+                                                    document.getElementById("popup2").style.display = "none";
+                                                }
+                                            </script>
+                                        </div>
+                                    </div>
+                                    <div class="box">
+                                        <div class="content">
+                                            <h2>02</h2>
+                                            <h3>Professional certificate in IBM DevOps and Software Engineering</h3>
+                                            <p>
+                                                <strong>
+                                                    <h7>COURSERA</h7><br></br>
+                                                </strong>
+                                                <strong>RELEVANT COURSEWORK</strong><br>
+                                                Introduction to Software Engineering
+                                                Introduction to agile and development and scrum Introduction to devOps
+                                                Introduction to Cloud Computing
+                                                Getting Started with Git and GitHub
+                                                Application Development using Microservices and Serverless
+                                                Hands-on Introduction to Linux Commands and Shell Scripting Application
+                                                Security and Monitoring
+                                            </p>
+                                            <a onclick="showPopup2()">SEE
+                                                CERTIFICATE</a>
+                                            <div id="popup2">
+                                                <h5 style="color:rgb(48, 94, 210);">Appologies, the certificate will be
+                                                    uplaoded as soon as possible
+                                                    <i class="fa fa-heart" style="font-size:16px;color: red;"></i>
+                                                </h5>
+                                                <button class="button" onclick="closePopup2()">OK</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="box">
+                                        <div class="content">
+                                            <h2>02</h2>
+                                            <h3>Professional certificate in IBM Full Stack Developer</h3>
+                                            <p>
+                                                <strong>
+                                                    <h7>COURSERA</h7><br></br>
+                                                </strong>
+                                                <strong>RELEVANT COURSEWORK</strong><br>
+                                                Web Development with HTML, CSS, JavaScript
+                                                Developing Front-End Apps with React
+                                                Python Project for AI & Application Development
+                                                Developing Back-End Apps with Node.js and Express
+                                                Python for Data Science, AI & Development
+                                                Introduction to containers/Dockers, Kubernetes & OpenShift
+                                                Developing Applications with SQL,Databases, and Django
+                                            </p>
+                                            <a href="image/full stack.jpg" data-lightbox="models"
+                                                data-title="IBM Full Stack Developer">SEE
+                                                CERTIFICATE</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="mySlides">
+                                <div class="morphism">
+                                    <div class="box">
+                                        <div class="content">
+                                            <h2>03</h2>
+                                            <h3>Developing Back-End Apps with Node.js and Express</h3>
+                                            <P>
+                                                <strong>
+                                                    <h7>COURSERA</h7><br></br>
+                                                </strong>
+                                                <strong>WHAT I LEARNED</strong><br>
+                                                Create server-side applications using the Node.js JavaScript run time.
+                                                Extend your Node.js applications with third-party packages and
+                                                frameworks,
+                                                including Express.
+                                                Use npm to manage Node.js packages in your Node.js application.
+                                                Develop asynchronous callback functions and promises to complete
+                                                asynchronous operations.
+                                            </p>
+                                            <a href="image/Back-End Apps.jpg" data-lightbox="models"
+                                                data-title="Back-End Apps with Node.js and Express">SEE
+                                                CERTIFICATE</a>
+                                        </div>
+                                    </div>
+                                    <div class="box">
+                                        <div class="content">
+                                            <h2>03</h2>
+                                            <h3>Introduction to DevOps</h3>
+                                            <P>
+                                                <strong>
+                                                    <h7>COURSERA</h7><br></br>
+                                                </strong>
+                                                <strong>WHAT I LEARNED</strong><br>
+                                                Essential DevOps concepts: software engineering practices,
+                                                cloud native microservices, automated continuous deployments, and
+                                                building
+                                                resilient code.
+                                                The importance of Continuous Integration and Continuous Delivery,
+                                                Infrastructure as Code, Test Driven Development, Behavior Driven
+                                                Development.
+                                            </p>
+                                            <a href="image/DevOps.jpg" data-lightbox="models"
+                                                data-title="Introduction to DevOps">SEE
+                                                CERTIFICATE</a>
+                                        </div>
+                                    </div>
+                                    <div class="box">
+                                        <div class="content">
+                                            <h2>03</h2>
+                                            <h3>IIntroduction to Cloud Computing</h3>
+                                            <P>
+                                                <strong>
+                                                    <h7>COURSERA</h7><br></br>
+                                                </strong>
+                                                <strong>WHAT I LEARNED</strong><br>
+                                                Define cloud computing and explain essential characteristics, history,
+                                                the business case for cloud, and the emerging technologies enabled by
+                                                cloud
+                                                Explain emerging Cloud related trends including HybridMulticloud,
+                                                Microservices,
+                                                Serverless, Cloud Native, DevOps, and Application Modernization
+                                                Describe the cloud service models Describe cloud service models,
+                                                cloud deployment models, and cloud infrastructure
+                                                Create IBM Cloud account and provision an instance of cloud object
+                                                storage
+                                                service to host a static webpage.
+                                            </p>
+                                            <a href="image/Cloud Computing.jpg" data-lightbox="models"
+                                                data-title="IIntroduction to Cloud Computing">SEE
+                                                CERTIFICATE</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="mySlides">
+                                <div class="morphism">
+                                    <div class="box">
+                                        <div class="content">
+                                            <h2>03</h2>
+                                            <h3>Introduction to Web Development with HTML, CSS, JavaScript</h3>
+                                            <p>
+                                                <strong>
+                                                    <h7>COURSERA</h7><br></br>
+                                                </strong>
+                                                <strong>RELEVANT COURSEWORK</strong><br>
+                                                Describe the website development process and define terminology such as
+                                                front-end, back-end,
+                                                and full stack developers.
+                                                Identify the developer tools and integrated development environments
+                                                (IDEs)
+                                                used by web developers.
+                                                Create and structure basic web pages using HTML and style them with CSS.
+                                                Develop dynamic web pages with interactive features using JavaScript.
+                                            </p>
+                                            <a href="image/Web Development.jpg" data-lightbox="models"
+                                                data-title="Introduction to Web Development with HTML, CSS, JavaScript">SEE
+                                                CERTIFICATE</a>
+                                        </div>
+                                    </div>
+                                    <div class="box">
+                                        <div class="content">
+                                            <h2>03</h2>
+                                            <h3>Getting Started with Git and GitHub</h3>
+                                            <p>
+                                                <strong>
+                                                    <h7>COURSERA</h7><br></br>
+                                                </strong>
+                                                <strong>RELEVANT COURSEWORK</strong><br>
+                                                Describe version control and its place in social and collaborative
+                                                coding
+                                                and in DevOps.
+                                                Explain basic Git concepts such as repositories and branches used for
+                                                distributed version control and social coding.
+                                                Create GitHub repositories and branches, and perform pull requests (PRs)
+                                                and
+                                                merge operations, to collaborate on a team project.
+                                                Build A portfolio by creating and sharing an open-source project on
+                                                GitHub
+                                            </p>
+                                            <a href="image/Git and GitHub.jpg" data-lightbox="models"
+                                                data-title="Getting Started with Git and GitHub">SEE
+                                                CERTIFICATE</a>
+                                        </div>
+                                    </div>
+                                    <div class="box">
+                                        <div class="content">
+                                            <h2>03</h2>
+                                            <h3>Python for Data Science, AI & Development</h3>
+                                            <p>
+                                                <strong>
+                                                    <h7>COURSERA</h7><br></br>
+                                                </strong>
+                                                <strong>RELEVANT COURSEWORK</strong><br>
+                                                Describe Python Basics including Data Types, Expressions, Variables, and
+                                                Data Structures.
+                                                Apply Python programming logic using Branching, Loops, Functions,
+                                                Objects &
+                                                Classes.
+                                                Demonstrate proficiency in using Python libraries such as Pandas, Numpy,
+                                                and
+                                                Beautiful Soup.
+                                                Access web data using APIs and web scraping from Python in Jupyter
+                                                Notebooks.
+                                            </p>
+                                            <a href="image/Data Science, Al.jpg" data-lightbox="models"
+                                                data-title="Python for Data Science, AI & Development">SEE
+                                                CERTIFICATE</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="mySlides">
+                                <div class="morphism">
+                                    <div class="box">
+                                        <div class="content">
+                                            <h2>03</h2>
+                                            <h3>Introduction to Agile Development and Scrum</h3>
+                                            <p>
+                                                <strong>
+                                                    <h7>COURSERA</h7><br></br>
+                                                </strong>
+                                                <strong>RELEVANT COURSEWORK</strong><br>
+                                                Adopt the 5 practices of Agile, a subset of DevOps: small batches,
+                                                minimum
+                                                viable product,
+                                                pair programming, behavior- and test-driven development.
+                                                Write good user stories, estimate and assign story points and track
+                                                stories
+                                                using a kanban board.
+                                                Incorporate Scrum artifacts, events, and benefits.
+                                                Create and refine a product backlog using the sprint planning process.
+                                                Produce potentially shippable product increments with every iteration.
+                                                Create burndown charts to forecast the ability to meet a sprint goal.
+                                                Use
+                                                metrics to enhance performance,
+                                                productivity, and client satisfaction.
+                                            </p>
+                                            <a href="image/Agile Development.jpg" data-lightbox="models"
+                                                data-title="Introduction to Agile Development and Scrum">SEE
+                                                CERTIFICATE</a>
+                                        </div>
+                                    </div>
+                                    <div class="box">
+                                        <div class="content">
+                                            <h2>03</h2>
+                                            <h3>Introduction to Containers w/ Docker, Kubernetes & OpenShift</h3>
+                                            <p>
+                                                <strong>
+                                                    <h7>COURSERA</h7><br></br>
+                                                </strong>
+                                                <strong>RELEVANT COURSEWORK</strong><br>
+                                                Containers and Containerization
+                                                Kubernetes Basics
+                                                Managing Applications with Kubernetes
+                                                The Kubernetes Ecosystem: OpenShift, Istio, etc.
+                                            </p>
+                                            <a href="image/Containers w: Docker,.jpg" data-lightbox="models"
+                                                data-title="Introduction to Containers w/ Docker, Kubernetes & OpenShift">SEE
+                                                CERTIFICATE</a>
+                                        </div>
+                                    </div>
+                                    <div class="box">
+                                        <div class="content">
+                                            <h2>03</h2>
+                                            <h3>Application Development using Microservices and Serverless</h3>
+                                            <p>
+                                                <strong>
+                                                    <h7>COURSERA</h7><br></br>
+                                                </strong>
+                                                <strong>RELEVANT COURSEWORK</strong><br>
+                                                Introduction to Microservices
+                                                Introduction to Microservices
+                                                Serverless Overview
+                                                Create and Deploy Microservices
+                                                OpenShift Essentials/Working with OpenShift and Istio
+                                            </p>
+                                            <a href="image/using Microservices.jpg" data-lightbox="models"
+                                                data-title=">Application Development using Microservices and Serverless">SEE
+                                                CERTIFICATE</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="mySlides">
+                                <div class="morphism">
+                                    <div class="box">
+                                        <div class="content">
+                                            <h2>03</h2>
+                                            <h3>Developing Front-End Apps with React</h3>
+                                            <p>
+                                                <strong>
+                                                    <h7>COURSERA</h7><br></br>
+                                                </strong>
+                                                <strong>RELEVANT COURSEWORK</strong><br>
+                                                Building Rich Front-End Applications with React and ES6
+                                                React Components
+                                                Advanced React
+                                                learn how to break down a UI into React components and become familiar
+                                                with
+                                                state using the Context API.
+                                                Furthermore, you will explore actions, reducers, and the dispatch
+                                                function
+                                            </p>
+                                            <a href="image/Front-End Apps.jpg" data-lightbox="models"
+                                                data-title="Developing Front-End Apps with React">SEE
+                                                CERTIFICATE</a>
+                                        </div>
+                                    </div>
+                                    <div class="box">
+                                        <div class="content">
+                                            <h2>03</h2>
+                                            <h3>Python Project for AI & Application Development</h3>
+                                            <p>
+                                                <strong>
+                                                    <h7>COURSERA</h7><br></br>
+                                                </strong>
+                                                <strong>RELEVANT COURSEWORK</strong><br>
+                                                Python - Unit testing, module packaging and web application development,
+                                                introduced to the process of packaging, unit testing in Python and
+                                                Flask, a
+                                                microweb framework,
+                                                the creation of web applications using flask. Packaging allows the Cloud
+                                                Application Developer
+                                                to produce a coding unit that can be tested and integrated into a
+                                                codebase.
+                                                Unit testing assures
+                                                that code is error-free and integrates properly within a larger project.
+                                                Flask is an open-source python package that allows you to create web
+                                                applications.
+                                            </p>
+                                            <a href="image/Python Project for Al.jpeg" data-lightbox="models"
+                                                data-title="Python Project for AI & Application Development">SEE
+                                                CERTIFICATE</a>
+                                        </div>
+                                    </div>
+                                    <div class="box">
+                                        <div class="content">
+                                            <h2>03</h2>
+                                            <h3>Developing Applications with SQL, Databases, and Django</h3>
+                                            <p>
+                                                <strong>
+                                                    <h7>COURSERA</h7><br></br>
+                                                </strong>
+                                                <strong>RELEVANT COURSEWORK</strong><br>
+                                                Getting Started with SQL & Relational Databases
+                                                ORM: Bridging the Gap Between the Real World and Relational Model
+                                                Full-stack Django Development
+                                                Consolidate and Deploy Your Django App
+                                                Final Project: Enhance Online Course App with New Features
+                                            </p>
+                                            <a href="image/sql and django.jpg" data-lightbox="models"
+                                                data-title="Developing Applications with SQL, Databases, and Django">SEE
+                                                CERTIFICATE</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!--slider buttons-->
+                            <button class="w3-button w3-black w3-display-left" onclick="plusDivs(-1)">&#10094;</button>
+                            <button class="w3-button w3-black w3-display-right" onclick="plusDivs(1)">&#10095;</button>
+
+
+                            <!--script-->
+                            <script>
+                                var slideIndex = 1;
+                                showDivs(slideIndex);
+
+                                function plusDivs(n) {
+                                    showDivs(slideIndex += n);
+                                }
+
+                                function showDivs(n) {
+                                    var i;
+                                    var x = document.getElementsByClassName("mySlides");
+                                    if (n > x.length) { slideIndex = 1 }
+                                    if (n < 1) { slideIndex = x.length }
+                                    for (i = 0; i < x.length; i++) {
+                                        x[i].style.display = "none";
+                                    }
+                                    x[slideIndex - 1].style.display = "block";
+                                }
+                            </script>
+
+                        </div>
+                    </div>
+                </div>
+
+        </section>
+        <!--contact section-->
+        <section class="contact_form ">
+            <div class="contact-form-container" id="contact-form">
+                <div class="contact-details">
+                    <center>
+                        <br>
+                        <a href="image/profile.JPG" data-lightbox="models" data-title="profile">
+                            <img src="image/profile.JPG" width="70px" height="75px" border-radius="10px" ; alt="">
+                        </a>
+
+                        <br>
+                        <h2>Thabang Shongwe</h2>
+                        <h4>Software Developer</h4><br>
+                        <p><i class="fas fa-phone"></i> +27693213995</p>
+                        <p><i class="fas fa-envelope"></i> shongwe1408@gmail.com</p>
+                        <p><i class="fas fa-map-marker-alt"></i> Gauteng ,South Africa</p>
+                    </center>
+
+                    <div class="social-icons">
+                        <a href="https://www.facebook.com/dimaria.junior.7?mibextid=LQQJ4d" target="_blank"><i
+                                class="fab fa-facebook-f"></i></a>
+                        <a href="https://api.whatsapp.com/send?phone=27693213995" target="_blank"><i
+                                class="fab fa-whatsapp"></i></a>
+                        <a href="https://twitter.com/@flaviyo1" target="_blank"><i class="fab fa-twitter"></i></a>
+                        <a href="https://instagram.com/bhut.flava?igshid=YmMyMTA2M2Y=" target="_blank"><i
+                                class="fab fa-instagram"></i></a>
+                        <a href="https://www.linkedin.com/in/thabang-shongwe-9623a0244" target="_blank"><i
+                                class="fab fa-linkedin"></i></a>
+                    </div>
+
+                </div>
+                <div class="send-message">
+                    <h2>Send a Message</h2>
+                    <form id="contact-form">
+                        <label for="name">Name</label>
+                        <input type="text" id="name" name="name" required>
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" required>
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" required></textarea>
+                        <button onclick="showPopup()" type="submit">Send</button>
+                    </form>
+                    <div id="popup">
+                        <h5 style="color:rgb(48, 94, 210);">Appologies, you can't send me text at the moment.As we being
+                            hosted on github pages ,Please use the numbers or email provided on left.
+                            thank you for your understanding, have a lovely day <i class="fa fa-heart"
+                                style="font-size:16px;color: red;"></i></h5>
+                        <button class="button" onclick="closePopup()">OK</button>
+                    </div>
+                    <script>
+                        function showPopup() {
+                            document.getElementById("popup").style.display = "block";
+                        }
+
+                        function closePopup() {
+                            document.getElementById("popup").style.display = "none";
+                        }
+                    </script>
+                </div>
+                <script>
+                    document.addEventListener('DOMContentLoaded', function () {
+                        const form = document.getElementById('contact-form');
+
+                        if (form !== null) {
+                            form.addEventListener('submit', (e) => {
+                                e.preventDefault();
+                                const name = form.name.value.trim();
+                                const email = form.email.value.trim();
+                                const message = form.message.value.trim();
+
+                                // Validation
+                                if (name === '' || email === '' || message === '') {
+                                    alert('Please fill in all fields.');
+                                    return;
+                                }
+
+                                // Send email
+                                // You can use an API or a server-side script to send the email
+                                alert('Your message has been sent!');
+                                form.reset();
+                            });
+                        }
+                    });
+                </script>
+
+        </section>
+
+        <!--Modal-->
+        <div id="myModal2" class="modal">
+            <div class="modal-content">
+                <span id="close" class="close">&times;</span>
+                <h3>Intermediate Python</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eget semper libero, ut
+                    maximus lorem. Praesent pulvinar, dolor vel ultrices suscipit, ante ipsum mollis
+                    dolor, at blandit quam urna in lacus. Morbi commodo, velit ac commodo tincidunt,
+                    eros elit tempor elit, nec sollicitudin elit ipsum vel lorem. Duis in dignissim
+                    nibh. Nunc commodo felis sed enim hendrerit commodo. Etiam id fermentum est. Sed at
+                    odio purus. Morbi commodo commodo mi, vel auctor augue pellentesque a. Nam
+                    vestibulum euismod dapibus. Sed at nisi ac orci faucibus bibendum. Nullam sit amet
+                    augue massa. Sed dignissim tellus eget est euismod, vel auctor augue dignissim.</p>
+            </div>
         </div>
-    </div>
-    <script>
-        // Get the modal
-        var modal = document.getElementById("myModal2");
+        <script>
+            // Get the modal
+            var modal = document.getElementById("myModal2");
 
-        // Get the button that opens the modal
-        var btn2 = document.getElementById("myBtn2");
+            // Get the button that opens the modal
+            var btn2 = document.getElementById("myBtn2");
 
-        // Get the <span> element that closes the modal
-        var span2 = document.getElementsByClassName("close")[0];
+            // Get the <span> element that closes the modal
+            var span2 = document.getElementsByClassName("close")[0];
 
-        // When the user clicks the button, open the modal 
-        btn2.onclick = function () {
-            modal.style.display = "block";
-        }
+            // When the user clicks the button, open the modal 
+            btn2.onclick = function () {
+                modal.style.display = "block";
+            }
 
-        // When the user clicks on <span> (x), close the modal
-        span2.onclick = function () {
-            modal.style.display = "none";
-        }
-
-        // When the user clicks anywhere outside of the modal, close it
-        window.onclick = function (event) {
-            if (event.target == modal) {
+            // When the user clicks on <span> (x), close the modal
+            span2.onclick = function () {
                 modal.style.display = "none";
             }
-        }
 
-    </script>
-    <!--footer section-->
-    <section class="top">
-        <footer>
-            <div class="footer-content">
-                <p>&copy; 2023 Thabang Shongwe. All rights reserved.</p>
-                <p>Designed and developed with <i class="fa fa-heart" style="font-size:16px;color: red;"></i> by Thabang
-                    Shongwe.</p>
-            </div>
-        </footer>
-
-    </section>
-    <!--go up button-->
-    <section>
-        <button id="scroll-to-top-btn">&#8593;</button>
-
-        <!--script for go up button-->
-        <script>
-            window.onscroll = function () { scrollFunction() };
-
-            function scrollFunction() {
-                if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-                    document.getElementById("scroll-to-top-btn").style.display = "block";
-                } else {
-                    document.getElementById("scroll-to-top-btn").style.display = "none";
+            // When the user clicks anywhere outside of the modal, close it
+            window.onclick = function (event) {
+                if (event.target == modal) {
+                    modal.style.display = "none";
                 }
             }
 
-            document.getElementById("scroll-to-top-btn").onclick = function () {
-                document.body.scrollTop = 0;
-                document.documentElement.scrollTop = 0;
-            }
-
         </script>
-    </section>
+        <!--footer section-->
+        <section class="top">
+            <footer>
+                <div class="footer-content">
+                    <p>&copy; 2023 Thabang Shongwe. All rights reserved.</p>
+                    <p>Designed and developed with <i class="fa fa-heart" style="font-size:16px;color: red;"></i> by
+                        Thabang
+                        Shongwe.</p>
+                </div>
+            </footer>
+
+        </section>
+        <!--go up button-->
+        <section>
+            <button id="scroll-to-top-btn">&#8593;</button>
+
+            <!--script for go up button-->
+            <script>
+                window.onscroll = function () { scrollFunction() };
+
+                function scrollFunction() {
+                    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                        document.getElementById("scroll-to-top-btn").style.display = "block";
+                    } else {
+                        document.getElementById("scroll-to-top-btn").style.display = "none";
+                    }
+                }
+
+                document.getElementById("scroll-to-top-btn").onclick = function () {
+                    document.body.scrollTop = 0;
+                    document.documentElement.scrollTop = 0;
+                }
+
+            </script>
+        </section>
+
+    </div>
+    <button id="mode-toggle-btn"></button>
+    <script>
+        const modeToggleBtn = document.querySelector('#mode-toggle-btn');
+        const appContainer = document.querySelector('#app-container');
+
+        modeToggleBtn.addEventListener('click', () => {
+            appContainer.classList.toggle('day-mode');
+            appContainer.classList.toggle('night-mode');
+        });
+    </script>
 </body>
 
 </html>

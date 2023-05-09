@@ -25,6 +25,12 @@ mark {
 
 }
 
+@media only screen and (max-width: 768px) {
+    .app-container {
+        width: 100%;
+    }
+}
+
 /* Styles for day mode */
 .day-mode {
     background-color: #f5f5f7;
@@ -35,20 +41,29 @@ mark {
     background-color: #040441;
 }
 
+
 /* Button styles */
 #mode-toggle-btn {
     position: fixed;
     bottom: 10px;
-    right: 10px;
-    padding: 10px;
+    right: 15px;
+    padding: 5px;
     border-radius: 60%;
     font-size: 15px;
     cursor: pointer;
     transition: background-color 0.2s;
 }
 
+#mode-toggle-btn .night-mode {
+    background-color: #f5f5f7;
+}
+
+#mode-toggle-btn .day-mode {
+    background-color: #040441;
+}
+
 #mode-toggle-btn:hover {
-    background-color: #ddd;
+    background-color: rgb(221, 221, 221);
 }
 
 /* Styles for day mode button */
@@ -366,7 +381,7 @@ header ul li a:hover {
 .about {
     background-color: #f5f5f7;
     overflow: hidden;
-    margin-top: 2%;
+    margin-top: 5%;
 }
 
 .about img {
@@ -389,13 +404,12 @@ header ul li a:hover {
     position: sticky;
     margin-bottom: 10px;
     font-size: 30px;
-    font-weight: 900;
+    font-weight: 700;
 }
 
 .text {
     font-size: 15px;
     font-style: italic;
-    font-weight: bold;
     color: #545454;
     line-height: 30px;
     text-align: justify;
@@ -596,10 +610,11 @@ header ul li a:hover {
 
 .portfolio center article a p {
     color: #b7bbc7;
+    cursor: pointer;
 }
 
 .portfolio center article a p:hover {
-    color: rgb(255, 250, 250);
+    color: #20b9fc;
 }
 
 .portfolio center article .card1 {
@@ -827,6 +842,75 @@ header ul li a:hover {
     }
 }
 
+/* CSS for card container */
+.card {
+    width: 300px;
+    height: 200px;
+    background-color: #f2f2f2;
+    border-radius: 5px;
+    padding: 20px;
+    text-align: center;
+    margin: 0 auto;
+    margin-top: 100px;
+}
+
+/* CSS for video modal */
+#videoModal {
+    display: none;
+    position: fixed;
+    bottom: 5vh;
+    /* 5% top margin */
+    left: 10vw;
+    /* 5% left margin */
+    width: 50vw;
+    /* 90% of viewport width */
+    height: 50vh;
+    /* 90% of viewport height */
+    background-color: #000;
+}
+
+#videoModal video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+#openButton {
+    color: black;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+    padding: 10px 50px;
+    justify-content: center;
+    border-radius: 8%;
+    margin: 10px;
+    border-bottom: 5px solid rgba(141, 141, 227, 0.904);
+    overflow: hidden;
+    transition: 0.5s;
+}
+#openButton::before {
+    content: "\f04b"; /* FontAwesome play icon */
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+  }
+
+#openButton:hover {
+    background-color: white;
+    color: #20b9fc;
+    z-index: 1;
+    transform: scale(1.05s);
+    border-bottom: 5px solid lightgreen;
+}
+
+#closeButton {
+    top: 1rem;
+    right: 1rem;
+    padding: 0.5rem;
+    color: #fff;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
 
 
 /*css for the 2nd toggle
@@ -1026,8 +1110,17 @@ header ul li a:hover {
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    border: 1px solid #000;
 }
+
+.day-mode .mySlides .box {
+    background-color: #a6a6cc3b;
+
+}
+
+.night-mode .mySlides .box {
+    background: #060c21;
+}
+
 
 @media only screen and (max-width: 768px) {
     .mySlides .box {
@@ -1086,7 +1179,7 @@ header ul li a:hover {
     margin: 0;
     padding: 0;
     color: #20b9fc;
-    font-size: 12px;
+    font-size: 13px;
 }
 
 .box .content p strong {
@@ -1142,9 +1235,11 @@ header ul li a:hover {
     border: none;
     cursor: pointer;
 }
+
 .day-mode .w3-button {
     background-color: #f5f5f7;
 }
+
 .night-mode .w3-button {
     background-color: #01012e;
 }
@@ -1175,8 +1270,7 @@ header ul li a:hover {
     transform: translate(-50%, -50%);
     background-color: white;
     padding: 20px;
-    border: 1px solid black;
-    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.8);
     z-index: 999;
     display: none;
 }
@@ -1285,8 +1379,7 @@ header ul li a:hover {
     transform: translate(-50%, -50%);
     background-color: white;
     padding: 20px;
-    border: 1px solid black;
-    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.8);
     z-index: 999;
     display: none;
 }

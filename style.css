@@ -26,6 +26,11 @@ mark {
 }
 
 @media only screen and (max-width: 768px) {
+    body{
+        background-image: url(image/bg1.jpg);
+        background-repeat: no-repeat;
+        background-size: 355px 655px;
+    }
     .app-container {
         width: 100%;
     }
@@ -46,7 +51,7 @@ mark {
 #mode-toggle-btn {
     position: fixed;
     bottom: 10px;
-    right: 15px;
+    right: 20px;
     padding: 5px;
     border-radius: 60%;
     font-size: 15px;
@@ -165,7 +170,7 @@ header ul li a {
 header ul li a:hover {
     color: lightgreen;
 }
-
+/* css for small screens*/
 @media only screen and (max-width: 768px) {
     header ul {
         display: block;
@@ -192,6 +197,9 @@ header ul li a:hover {
 
     header ul li a {
         color: black;
+    }
+    .logo img {
+       margin-left: -40px;
     }
 
     .menubar {
@@ -261,6 +269,7 @@ header ul li a:hover {
     border-bottom: 5px solid rgba(141, 141, 227, 0.904);
     overflow: hidden;
     transition: 0.5s;
+     cursor: pointer;
 }
 
 .button input:hover {
@@ -313,29 +322,51 @@ header ul li a:hover {
 
 }
 
-
+/*css for small screen*/
 @media only screen and (max-width: 768px) {
+    .hero-content{
+        display: block;
+        width: 100%;
+        height: 100%;
+    }
+    .hero .social-icons{
+        display: inline-block;
+        margin: 9%;
+        margin-top: -30px;
+        margin-bottom: 20px;
+        align-items: center;
+    }
+    .home-text-box h1 {
+        color: rgba(242, 3, 255, 0.885);
+    }
+    .gradient {
+        background: -webkit-linear-gradient(rgb(149, 12, 127), rgb(192, 48, 240));
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
     .hero {
         padding: 10px;
+        height: 74vh;
+        width: 100%;
     }
 
     .home-text-box {
         justify-content: center;
         left: -20px;
     }
+    .home-text-box span {
+        font-weight: bold;
+    }
 
     .centered {
-        position: absolute;
-        top: 50%;
-        left: 47%;
+        top: 30%;
+        left: 50%;
         transform: translate(-50%, -50%);
         width: 80%;
     }
 
     .hero-content img {
         visibility: hidden;
-        height: 57vh;
-        width: 0%;
     }
 }
 
@@ -361,6 +392,7 @@ header ul li a:hover {
     font-style: italic;
 }
 
+/*css for small screen*/
 @media only screen and (max-width: 768px) {
     .counter {
         display: grid;
@@ -444,11 +476,7 @@ header ul li a:hover {
     }
 
     .about img {
-        margin-top: 5%;
-        background-size: 70%;
-        height: 50vh;
-        align-items: center;
-
+       display: none;
     }
 
     .inner-section {
@@ -456,10 +484,19 @@ header ul li a:hover {
         width: 400px;
         padding-left: -10px;
         padding-right: -10px;
-        background-color: #b7bbc7;
+        background: rgba(199, 192, 192, 0.1);
         overflow: hidden;
         box-shadow: none;
     }
+    .inner-section h1 {
+       text-align: center;
+       color: #888;
+    }
+    .skills button {
+        align-self: center;
+        margin-left: 50px;
+    }
+
 }
 
 /*********************************************************
@@ -516,6 +553,7 @@ header ul li a:hover {
 @media only screen and (max-width: 768px) {
 
     .searchbar {
+        display: none;
         background-color: #f5f5f5;
         height: 20vh;
         align-content: center;
@@ -1064,8 +1102,7 @@ header ul li a:hover {
     }
 
     .grid-container .card5 {
-        width: 50%;
-        height: 50%;
+       display: none;
     }
 
 }
@@ -1361,7 +1398,7 @@ header ul li a:hover {
 .send-message {
     flex: 3;
     display: flex;
-    height: 50%;
+    height: 55%;
     margin-top: 40px;
     flex-direction: column;
     justify-content: center;
@@ -1503,7 +1540,10 @@ textarea {
     background-color: #e65c00;
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 355px) {
+    .contact_form{
+        width: 100%;
+    }
 
     .contact-form-container {
         display: block;
@@ -1512,15 +1552,19 @@ textarea {
 
     .contact-details {
         height: 50vh;
+        width: 100%;
         font-size: 12px;
         margin-bottom: 0;
+        box-shadow: none;
     }
 
     .send-message {
         height: 50vh;
         padding: 2px;
+        width: 100%;
         font-size: 12px;
         margin-top: 0;
+        box-shadow: none;
 
     }
 
@@ -1554,6 +1598,7 @@ footer {
 
 .footer-content {
     display: block;
+    max-width: 90%;
     justify-content: center;
     align-items: center;
     height: 100%;
@@ -1579,6 +1624,8 @@ footer {
         transform: translateX(0);
     }
 }
+
+
 
 /*********************************************************
            css for go up button  section

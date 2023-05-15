@@ -1541,10 +1541,7 @@ textarea {
 }
 
 @media only screen and (max-width: 355px) {
-    .contact_form{
-        width: 100%;
-    }
-
+   
     .contact-form-container {
         display: block;
         width: 100%;
@@ -1552,7 +1549,6 @@ textarea {
 
     .contact-details {
         height: 50vh;
-        width: 100%;
         font-size: 12px;
         margin-bottom: 0;
         box-shadow: none;
@@ -1561,7 +1557,6 @@ textarea {
     .send-message {
         height: 50vh;
         padding: 2px;
-        width: 100%;
         font-size: 12px;
         margin-top: 0;
         box-shadow: none;

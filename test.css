@@ -3,8 +3,6 @@
 * {
     padding: 0;
     margin: 0;
-    box-sizing: border-box;
-
 }
 
 html,
@@ -14,35 +12,22 @@ body {
     background-color: #f5f5f7;
 }
 
+/* to give space between sections*/
 .top {
     margin-top: 3%;
 }
 
-
-@media only screen and (max-width: 768px) {
-    body {
-        background-image: url(image/bg1.jpg);
-        background-repeat: no-repeat;
-        background-size: 420px 755px;
-    }
-
-    .app-container {
-        width: 100%;
-    }
-}
-
-/* Styles for day mode */
+/*********************************************************
+          css change between dark & light mode
+*********************************************************/
 .day-mode {
     background-color: #f5f5f7;
 }
 
-/* Styles for night mode */
 .night-mode {
     background-color: #040441;
 }
 
-
-/* Button styles */
 #mode-toggle-btn {
     position: fixed;
     bottom: 10px;
@@ -75,9 +60,6 @@ body {
 .night-mode #mode-toggle-btn::before {
     content: "☼";
 }
-
-
-
 
 /*********************************************************
            css for header section
@@ -166,58 +148,6 @@ header ul li a:hover {
     color: lightgreen;
 }
 
-/* css for small screens*/
-@media only screen and (max-width: 768px) {
-    header ul {
-        display: list-item;
-        position: fixed;
-        left: -100%;
-        padding: 10px;
-        top: 5rem;
-        flex-direction: column;
-        background-color: rgba(207, 219, 218, 0.505);
-        width: 50%;
-        border-radius: 10px;
-        text-align: center;
-        transition: 0.5s;
-        box-shadow: 0 10px 27px rgba(0, 0, 0, 0.05);
-        z-index: 20;
-    }
-
-    header ul.active {
-        left: 0%;
-    }
-
-    header ul li {
-        margin: 1.5rem 0;
-    }
-
-    header ul li a {
-        color: black;
-    }
-
-    .logo img {
-        margin-left: -40px;
-    }
-
-    .menubar {
-        display: block;
-        cursor: pointer;
-    }
-
-    .menubar.active .bar:nth-child(2) {
-        opacity: 0;
-    }
-
-    .menubar.active .bar:nth-child(1) {
-        transform: translateY(8px) rotate(45deg);
-    }
-
-    .menubar.active .bar:nth-child(3) {
-        transform: translateY(-8px) rotate(-45deg);
-    }
-
-}
 
 /*********************************************************
            css for hero section
@@ -320,60 +250,6 @@ header ul li a:hover {
 
 }
 
-/*css for small screen*/
-@media only screen and (max-width: 768px) {
-    .hero-content {
-        display: block;
-        width: 100%;
-        height: 100%;
-    }
-
-    .hero .social-icons {
-        display: inline-block;
-        margin: 10%;
-        font-size: medium;
-        margin-top: -30px;
-        margin-bottom: 20px;
-        align-items: center;
-    }
-
-    .home-text-box h1 {
-        color: rgba(242, 3, 255, 0.885);
-    }
-
-    .gradient {
-        background: -webkit-linear-gradient(rgb(149, 12, 127), rgb(192, 48, 240));
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-    }
-
-    .hero {
-        padding: 10px;
-        height: 74vh;
-        width: 100%;
-    }
-
-    .home-text-box {
-        justify-content: center;
-        left: -20px;
-    }
-
-    .home-text-box span {
-        font-weight: bold;
-    }
-
-    .centered {
-        top: 30%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        width: 80%;
-    }
-
-    .hero-content img {
-        visibility: hidden;
-    }
-}
-
 /*********************************************************
            css for number counter section
 *********************************************************/
@@ -394,21 +270,6 @@ header ul li a:hover {
 
 .counter h1 {
     font-style: italic;
-}
-
-/*css for small screen*/
-@media only screen and (max-width: 768px) {
-    .counter {
-        display: grid;
-        grid-template-columns: repeat(4, 1fr);
-        gap: 4em;
-        width: 100%;
-        text-align: center;
-        font-size: 5px;
-        font-weight: bold;
-        color: #333;
-    }
-
 }
 
 /*********************************************************
@@ -471,41 +332,6 @@ header ul li a:hover {
     background-color: #ecf5f5;
     color: #00999c;
 }
-
-
-
-@media only screen and (max-width: 768px) {
-    .about {
-        padding: 10px;
-    }
-
-    .about img {
-        display: none;
-    }
-
-    .inner-section {
-        margin-left: -28px;
-        min-width: 455px;
-        max-width: 100%;
-        padding-left: -10px;
-        padding-right: -10px;
-        background: rgba(199, 192, 192, 0.1);
-        overflow: hidden;
-        box-shadow: none;
-    }
-
-    .inner-section h1 {
-        text-align: center;
-        color: #888;
-    }
-
-    .skills button {
-        align-self: center;
-        margin-left: 70px;
-    }
-
-}
-
 /*********************************************************
            css for searchbar  section
 *********************************************************/
@@ -563,42 +389,10 @@ mark {
     color: black;
 
 }
-
-@media only screen and (max-width: 768px) {
-
-    .searchbar {
-        display: none;
-        background-color: #f5f5f5;
-        height: 20vh;
-        align-content: center;
-
-    }
-
-    .searchbar div {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        border: #ecf5f5;
-    }
-
-    .searchbar input[type="text"] {
-        padding: 10px;
-        border-radius: 5px;
-        border: none;
-        margin-right: -40px;
-        /* Adjust for the button width */
-        width: 80%;
-        box-sizing: border-box;
-        box-shadow: 13px 12px 8px rgba(0, 0, 0, 0.3);
-    }
-}
-
-
 /*********************************************************
            css for portfolio  section
 *********************************************************/
 
-/* Style the buttons */
 .portfolio {
     padding: 50px;
     height: 100%;
@@ -676,12 +470,6 @@ mark {
     font-style: italic;
 }
 
-@media only screen and (max-width: 768px) {
-    .portfolio center article .card1 {
-        width: 100%;
-    }
-}
-
 .portfolio center article .card1 h2 {
     font-size: 20px;
     padding-bottom: 10px;
@@ -692,38 +480,6 @@ mark {
     width: 70%;
 }
 
-@media only screen and (max-width: 768px) {
-    .portfolio {
-        padding: 0;
-        height: 100%;
-        width: 100%;
-    }
-
-    .portfolio center article {
-        display: block;
-        padding: 5px;
-    }
-
-    .portfolio center article .card {
-        width: 100%;
-        padding: 5px;
-        font-size: 5px;
-        font-style: italic;
-    }
-
-    .portfolio center article .card h2 img {
-        height: 100px;
-        width: 100%;
-    }
-
-    .toggled_space {
-        margin: 0;
-        padding: 0;
-    }
-}
-
-
-
 /* Show the selected div */
 .active-div {
     display: grid;
@@ -733,21 +489,8 @@ mark {
     display: none;
 }
 
-
-/* for mobile phones*/
-
-@media only screen and (max-width: 768px) {
-    .toggle-button {
-        padding: 5px;
-        width: 25%;
-        font-size: 7px;
-    }
-}
-
-/*********************************************************
-           css for   section
-*********************************************************/
-/*css for 1st toggler
+/**********************
+css for 1st toggler
 ***************************/
 #div1 {
     width: 100%;
@@ -963,25 +706,8 @@ mark {
     cursor: pointer;
 }
 
-@media only screen and (max-width: 768px) {
-    .grid-container {
-        display: block;
-        margin-bottom: 10px;
-        height: 100%;
-    }
-
-    .grid-container .grid-item {
-        min-height: 20vh;
-        max-width: 95%;
-        margin-bottom: 20px;
-        border-radius: 8px;
-    }
-
-}
-
-
-
-/*css for the 2nd toggle
+/* ***************************
+css for the 2nd toggle
 *********************************/
 
 .div2-item {
@@ -1124,20 +850,8 @@ mark {
     visibility: visible;
 }
 
-@media only screen and (max-width: 768px) {
-    .grid-container {
-        display: block;
-        margin-bottom: 10px;
-        height: 100%;
-    }
-
-    .grid-container .card5 {
-        display: none;
-    }
-
-}
-
-/*css for the 3rd toggle
+/*****************************
+css for the 3rd toggle
 *********************************/
 
 
@@ -1146,14 +860,6 @@ mark {
     justify-content: space-between;
     flex-wrap: wrap;
     gap: 2em;
-}
-
-@media only screen and (max-width: 768px) {
-    .morphism {
-        display: list-item;
-        gap: 1em;
-
-    }
 }
 
 .projects {
@@ -1166,8 +872,6 @@ mark {
     padding: 0 15px;
     margin: 0;
 }
-
-
 .mySlides .box {
     position: relative;
     width: 30%;
@@ -1181,21 +885,10 @@ mark {
 
 .day-mode .mySlides .box {
     background-color: #a6a6cc3b;
-
 }
 
 .night-mode .mySlides .box {
     background: #060c21;
-}
-
-
-@media only screen and (max-width: 768px) {
-    .mySlides .box {
-        width: 300px;
-        height: 100%;
-        padding: auto;
-        margin: 0;
-    }
 }
 
 .morphism .box::before {
@@ -1346,60 +1039,47 @@ mark {
     margin-left: 40%;
     transition: all 0.2s ease-out;
 }
+/*********************************************************
+           css for  modal
+*********************************************************/
 
-@media only screen and (max-width: 768px) {
-    .w3-content .w3-display-container {
-        display: list-item;
-        max-width: 90%;
-        margin: auto;
-    }
-
-
+/* Center the Modal */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0%;
+    top: 0%;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
 }
 
+/* Modal Content */
+.modal-content {
+    background: rgba(79, 79, 133, 0.904);
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 60%;
+    height: 70%;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    color: white;
+}
 
-
-    /*********************************************************
-            css for  modal
-    *********************************************************/
-
-    /* Center the Modal */
-    .modal {
-        display: none;
-        position: fixed;
-        z-index: 1;
-        left: 0%;
-        top: 0%;
-        width: 100%;
-        height: 100%;
-        overflow: auto;
-        background-color: rgba(0, 0, 0, 0.4);
-    }
-
-    /* Modal Content */
-    .modal-content {
-        background: rgba(79, 79, 133, 0.904);
-        margin: auto;
-        padding: 20px;
-        border: 1px solid #888;
-        width: 60%;
-        height: 70%;
-        position: relative;
-        top: 50%;
-        transform: translateY(-50%);
-        color: white;
-    }
-
-    /* The Close Button */
-    .close {
-        color: #f5f5f7;
-        position: absolute;
-        top: 10px;
-        right: 10px;
-        font-size: 20px;
-        font-weight: bold;
-        cursor: pointer;
-    }
+/* The Close Button */
+.close {
+    color: #f5f5f7;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+}
 
 /*********************************************************
            css for  contact  section
@@ -1560,42 +1240,6 @@ textarea {
     border-bottom: 5px solid lightgreen;
 }
 
-
-@media only screen and (max-width: 768px) {
-
-    .contact-form-container {
-        display: block;
-        width: 100%;
-    }
-
-    .contact-details {
-        height: 50vh;
-        font-size: 12px;
-        margin-bottom: 0;
-        box-shadow: none;
-    }
-
-    .send-message {
-        height: 50vh;
-        padding: 2px;
-        font-size: 12px;
-        margin-top: 0;
-        box-shadow: none;
-
-    }
-
-    .send-message input {
-        height: 20px;
-        padding: 0;
-        width: 250px;
-    }
-
-    .send-message textarea {
-        width: 250px;
-    }
-
-}
-
 /*********************************************************
            css for Rating  section
 *********************************************************/
@@ -1698,8 +1342,6 @@ textarea {
     color: greenyellow;
 }
 
-
-
 /*********************************************************
            css for footer  section
 *********************************************************/
@@ -1744,9 +1386,6 @@ footer {
         transform: translateX(0);
     }
 }
-
-
-
 /*********************************************************
            css for go-up button  section
 *********************************************************/
@@ -1771,5 +1410,329 @@ footer {
 #scroll-to-top-btn:hover {
     background-color: #b7bbc7;
 }
+/************************************************************************************************/
 
 
+/*********************************************************
+           CSS FOR SMALL SCREEN
+*********************************************************/
+@media only screen and (max-width: 768px) {
+    body {
+        background-image: url(image/bg1.jpg);
+        background-repeat: no-repeat;
+        background-size: 420px 755px;
+    }
+
+    .app-container {
+        width: 100%;
+    }
+
+    /*
+           css for header section
+*********************************************************/
+
+    header ul {
+        display: list-item;
+        position: fixed;
+        left: -100%;
+        padding: 10px;
+        top: 5rem;
+        flex-direction: column;
+        background-color: rgba(207, 219, 218, 0.505);
+        width: 50%;
+        border-radius: 10px;
+        text-align: center;
+        transition: 0.5s;
+        box-shadow: 0 10px 27px rgba(0, 0, 0, 0.05);
+        z-index: 20;
+    }
+
+    header ul.active {
+        left: 0%;
+    }
+
+    header ul li {
+        margin: 1.5rem 0;
+    }
+
+    header ul li a {
+        color: black;
+    }
+
+    .logo img {
+        margin-left: -40px;
+    }
+
+    .menubar {
+        display: block;
+        cursor: pointer;
+    }
+
+    .menubar.active .bar:nth-child(2) {
+        opacity: 0;
+    }
+
+    .menubar.active .bar:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+
+    .menubar.active .bar:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+
+
+    /*
+           css for hero section
+*********************************************************/
+
+    .hero-content {
+        display: block;
+        width: 100%;
+        height: 100%;
+    }
+
+    .hero .social-icons {
+        display: inline-block;
+        margin: 10%;
+        font-size: medium;
+        margin-top: -30px;
+        margin-bottom: 20px;
+        align-items: center;
+    }
+
+    .home-text-box h1 {
+        color: rgba(242, 3, 255, 0.885);
+    }
+
+    .gradient {
+        background: -webkit-linear-gradient(rgb(149, 12, 127), rgb(192, 48, 240));
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+
+    .hero {
+        padding: 10px;
+        height: 74vh;
+        width: 100%;
+    }
+
+    .home-text-box {
+        justify-content: center;
+        left: -20px;
+    }
+
+    .home-text-box span {
+        font-weight: bold;
+    }
+
+    .centered {
+        top: 30%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 80%;
+    }
+
+    .hero-content img {
+        visibility: hidden;
+    }
+
+    /**
+           css for number counter section
+*********************************************************/
+    .counter {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 4em;
+        width: 100%;
+        text-align: center;
+        font-size: 5px;
+        font-weight: bold;
+        color: #333;
+    }
+
+    /*
+           css for aboutme  section
+*********************************************************/
+
+    .about {
+        padding: 10px;
+    }
+
+    .about img {
+        display: none;
+    }
+
+    .inner-section {
+        margin-left: -28px;
+        min-width: 455px;
+        max-width: 100%;
+        padding-left: -10px;
+        padding-right: -10px;
+        background: rgba(199, 192, 192, 0.1);
+        overflow: hidden;
+        box-shadow: none;
+    }
+
+    .inner-section h1 {
+        text-align: center;
+        color: #888;
+    }
+
+    .skills button {
+        align-self: center;
+        margin-left: 70px;
+    }
+
+    /**
+           css for searchbar  section
+*********************************************************/
+    .searchbar {
+        display: none;
+        background-color: #f5f5f5;
+        height: 20vh;
+        align-content: center;
+
+    }
+
+    .searchbar div {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: #ecf5f5;
+    }
+
+    .searchbar input[type="text"] {
+        padding: 10px;
+        border-radius: 5px;
+        border: none;
+        margin-right: -40px;
+        /* Adjust for the button width */
+        width: 80%;
+        box-sizing: border-box;
+        box-shadow: 13px 12px 8px rgba(0, 0, 0, 0.3);
+    }
+
+    /**
+           css for portfolio  section
+*********************************************************/
+    .portfolio center article .card1 {
+        width: 100%;
+    }
+
+    .portfolio {
+        padding: 0;
+        height: 100%;
+        width: 100%;
+    }
+
+    .portfolio center article {
+        display: block;
+        padding: 5px;
+    }
+
+    .portfolio center article .card {
+        width: 100%;
+        padding: 5px;
+        font-size: 5px;
+        font-style: italic;
+    }
+
+    .portfolio center article .card h2 img {
+        height: 100px;
+        width: 100%;
+    }
+
+    .toggle-button {
+        padding: 5px;
+        width: 25%;
+        font-size: 7px;
+    }
+
+    .toggled_space {
+        margin: 0;
+        padding: 0;
+    }
+
+    /*css for 1st toggler
+***************************/
+    .grid-container {
+        display: block;
+        margin-bottom: 10px;
+        height: 100%;
+    }
+
+    .grid-container .grid-item {
+        min-height: 20vh;
+        max-width: 95%;
+        margin-bottom: 20px;
+        border-radius: 8px;
+    }
+
+    /*css for the 2nd toggle
+*********************************/
+    .grid-container {
+        display: block;
+        margin-bottom: 10px;
+        height: 100%;
+    }
+
+    .grid-container .card5 {
+        display: none;
+    }
+
+    /*css for the 3rd toggle
+*********************************/
+    .morphism {
+        display: list-item;
+        gap: 1em;
+
+    }
+
+    .mySlides .box {
+        width: 300px;
+        height: 100%;
+        padding: auto;
+        margin: 0;
+    }
+
+    .w3-content .w3-display-container {
+        display: list-item;
+        max-width: 90%;
+        margin: auto;
+    }
+
+    /*
+           css for  contact  section
+*********************************************************/
+    .contact-form-container {
+        display: block;
+        width: 100%;
+    }
+
+    .contact-details {
+        height: 50vh;
+        font-size: 12px;
+        margin-bottom: 0;
+        box-shadow: none;
+    }
+
+    .send-message {
+        height: 50vh;
+        padding: 2px;
+        font-size: 12px;
+        margin-top: 0;
+        box-shadow: none;
+
+    }
+
+    .send-message input {
+        height: 20px;
+        padding: 0;
+        width: 250px;
+    }
+
+    .send-message textarea {
+        width: 250px;
+    }
+
+}

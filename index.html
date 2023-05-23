@@ -19,6 +19,8 @@
 </head>
 
 <body class="day-mode">
+    <!--preloader for the site-->
+
     <div id="app-container">
         <header class="header" id="header">
             <div class="container">
@@ -740,10 +742,11 @@
                                                 <a onclick="showPopup2()">SEE
                                                     CERTIFICATE</a>
                                                 <div id="popup2">
-                                                    <h5 style="color:rgb(48, 94, 210);">Appologies, the certificate will
-                                                        be
-                                                        uplaoded as soon as possible
-                                                        <i class="fa fa-heart" style="font-size:16px;color: red;"></i>
+                                                    <h5 style="color:rgb(48, 94, 210);">Appologies,because of security reasons the certificate will
+                                                        provided upon request have 
+
+
+                                                        <i class="fa fa-heart" style="font-size:16px;color: red;"></i> day
                                                     </h5>
                                                     <button class="button" onclick="closePopup2()">OK</button>
                                                 </div>
@@ -1165,130 +1168,233 @@
                 </div>
             </div>
         </section>
-        <!--FQAs section-->
-        <section class="rating top">
-            <div class="big-star">
-                <i class="fas fa-star"></i>
-                <p class="selected-rating"></p>
-            </div>
-            <h3>Rate your experiences of the side</h3>
-            <ul class="stars">
-                <li class="star" data-value="1">
-                    <i class="fas fa-star"></i>
-                </li>
-                <li class="star" data-value="2">
-                    <i class="fas fa-star"></i>
-                </li>
-                <li class="star" data-value="3">
-                    <i class="fas fa-star"></i>
-                </li>
-                <li class="star" data-value="4">
-                    <i class="fas fa-star"></i>
-                </li>
-                <li class="star" data-value="5">
-                    <i class="fas fa-star"></i>
-                </li>
-            </ul>
-            <p class="feedback-mes"></p>
-            <button type="button">Submit Rating</button>
+        <!--extras section-->
+        <section class="extras top">
+            <div class="accordion-container">
+                <h1>MOST COMMON IMPORTANT QUESTIONS</h1>
+                <div class="tap">
+                    <input type="radio" name="acc" id="acc1">
+                    <label for="acc1">
+                        <h2>01</h2>
+                        <h3>How do you stay updated with the latest trends?</h3>
+                    </label>
+                    <div class="content">
+                        <p>I actively engage with online platforms such as YouTube and Twitter. I regularly watch
+                            educational and informative videos on YouTube that cover a wide range of software
+                            development topics, including tutorials, conference talks, and technology discussions.
+                            Additionally, I follow relevant individuals, thought leaders, and organizations on Twitter
+                            who share valuable insights, news, and updates in the software development community. This
+                            allows me to stay connected with the latest happenings, industry discussions, and emerging
+                            trends in a convenient and accessible manner. By combining these online platforms with other
+                            strategies, I ensure a comprehensive approach to staying informed and continuously expanding
+                            my knowledge in the dynamic world of software development.</p>
+                    </div>
+                </div>
+                <div class="tap">
+                    <input type="radio" name="acc" id="acc2">
+                    <label for="acc2">
+                        <h2>02</h2>
+                        <h3>How do you approach problem-solving ?</h3>
+                    </label>
+                    <div class="content">
+                        <p>When approaching problem-solving, I follow a systematic approach. Firstly, I thoroughly
+                            analyze the problem to gain a clear understanding of its requirements and constraints. Then,
+                            I break it down into smaller, manageable parts to identify the key components and potential
+                            solutions. Next, I brainstorm possible approaches and evaluate their feasibility and
+                            potential impact. Once I select a solution, I create a plan and start implementing it,
+                            keeping in mind code readability, maintainability, and efficiency. Throughout the process, I
+                            actively seek feedback, collaborate with team members, and continuously test and iterate to
+                            ensure the solution meets the desired outcome.</p>
+                    </div>
+                </div>
+                <div class="tap">
+                    <input type="radio" name="acc" id="acc3">
+                    <label for="acc3">
+                        <h2>03</h2>
+                        <h3>How do you handle working on multiple projects ?</h3>
+                    </label>
+                    <div class="content">
+                        <p>Managing multiple projects simultaneously requires effective prioritization,
+                            organization, and time management. I usually start by assessing the urgency, importance, and
+                            dependencies of each task. I create a clear schedule , breaking down the work
+                            into smaller, achievable steps. I dedicated time for each project ,
+                            ensuring I have sufficient focus and attention for each. I also make use of project
+                            management tools or techniques, such as Agile methodologies or Kanban boards, to track
+                            progress, identify bottlenecks, and communicate with community members. Regular
+                            communication and collaboration with cumminity members help me stay effective.</p>
+                    </div>
+                </div>
+                <div class="tap">
+                    <input type="radio" name="acc" id="acc4">
+                    <label for="acc4">
+                        <h2>04</h2>
+                        <h3>How do you ensure code quality, maintainability, and scalability ?</h3>
+                    </label>
+                    <div class="content">
+                        <p>Ensuring code quality, maintainability, and scalability is crucial for long-term project
+                            success. I follow established best practices, including writing clean, modular, and
+                            well-documented code. I leverage appropriate design patterns and architectural principles to
+                            achieve code that is reusable and easy to understand. I also including unit testing to
+                            validate
+                            the functionality and catch any potential issues early on. Additionally, I pay attention to
+                            performance optimizations and consider the scalability of the solution, anticipating future
+                            growth or changes in requirements.</p>
+                    </div>
+                </div>
 
-            <script>
-                const bigStar = document.querySelector('.big-star i');
-                const stars = document.querySelectorAll('.star');
-                const ratingText = document.querySelector('.selected-rating');
-                const feedback = document.querySelector('.feedback-mes');
-                const btn = document.querySelector('.rating button');
+                <script>
+                    // Get all accordion headers
+                    const accordionHeaders = document.querySelectorAll('.accordion-header');
 
-                // Loop through each star
-                stars.forEach(star => {
-                    star.addEventListener('mouseenter', handleHover);
-                    star.addEventListener('mouseleave', handleLeave);
-                    star.addEventListener('click', handleClick);
-                });
+                    // Add click event listeners to accordion headers
+                    accordionHeaders.forEach(header => {
+                        header.addEventListener('click', () => {
+                            // Toggle the active class on the clicked header
+                            header.classList.toggle('active');
 
-                let rating;
+                            // Get the sibling content of the clicked header
+                            const content = header.nextElementSibling;
 
-                function highlightStar(rating) {
-                    stars.forEach((star, index) => {
-                        if (index < rating) {
-                            star.classList.add('selected');
-                        } else {
-                            star.classList.remove('selected');
-                        }
+                            // Toggle the display of the content
+                            if (content.style.display === 'block') {
+                                content.style.display = 'none';
+                            } else {
+                                content.style.display = 'block';
+                            }
+                        });
                     });
-                }
 
-                function getFeedbackMessage(rating) {
-                    switch (rating) {
-                        case '1':
-                            return '<h2>Terrible!</h2> <p>Sorry for the bad experience.</p>';
-                        case '2':
-                            return '<h2>Not good</h2> <p>I will try to do better and meet your expectations.</p>';
-                        case '3':
-                            return '<h2>Its Okay</h2> <p>I appreciate your feedback and will improve.</p>';
-                        case '4':
-                            return '<h2>Good!</h2> <p>Am glad you had a good experience.</p > ';
-                        case '5':
-                            return '<h2>Excellent!!</h2> <p>Am happy your experience was this exciting.</p > ';
-                        default:
-                            return '';
+                </script>
+            </div>
+
+            <div class="rating">
+                <div class="big-star">
+                    <i class="fas fa-star"></i>
+                    <p class="selected-rating"></p>
+                </div>
+                <h3>Rate your experiences of the site</h3>
+                <ul class="stars">
+                    <li class="star" data-value="1">
+                        <i class="fas fa-star"></i>
+                    </li>
+                    <li class="star" data-value="2">
+                        <i class="fas fa-star"></i>
+                    </li>
+                    <li class="star" data-value="3">
+                        <i class="fas fa-star"></i>
+                    </li>
+                    <li class="star" data-value="4">
+                        <i class="fas fa-star"></i>
+                    </li>
+                    <li class="star" data-value="5">
+                        <i class="fas fa-star"></i>
+                    </li>
+                </ul>
+                <p class="feedback-mes"></p>
+                <button type="button">Submit Rating</button>
+
+                <!-- HTML code remains the same -->
+
+                <script>
+                    const bigStar = document.querySelector('.big-star i');
+                    const stars = document.querySelectorAll('.star');
+                    const ratingText = document.querySelector('.selected-rating');
+                    const feedback = document.querySelector('.feedback-mes');
+                    const btn = document.querySelector('.rating button');
+                    const thankYouMessage = document.querySelector('.thank-you');
+
+                    // Loop through each star
+                    stars.forEach(star => {
+                        star.addEventListener('mouseenter', handleHover);
+                        star.addEventListener('mouseleave', handleLeave);
+                        star.addEventListener('click', handleClick);
+                    });
+
+                    let rating;
+
+                    function highlightStar(rating) {
+                        stars.forEach((star, index) => {
+                            if (index < rating) {
+                                star.classList.add('selected');
+                            } else {
+                                star.classList.remove('selected');
+                            }
+                        });
                     }
 
-                }
+                    function getFeedbackMessage(rating) {
+                        // Feedback message code remains the same
+                        switch (rating) {
+                            case '1':
+                                return '<h2>Terrible!</h2> <p>Sorry for the bad experience.</p>';
+                            case '2':
+                                return '<h2>Not good!</h2> <p>I will try to do better and meet your expectations.</p>';
+                            case '3':
+                                return '<h2>Its Okay!</h2> <p>I appreciate your feedback and will improve.</p>';
+                            case '4':
+                                return '<h2>Good!</h2> <p>Am glad you had a good experience.</p > ';
+                            case '5':
+                                return '<h2>Excellent!!</h2> <p>Am happy your experience was this exciting.</p > ';
+                            default:
+                                return '';
+                        }
+                    }
 
-                function handleHover(e) {
-                    const rating = e.currentTarget.getAttribute('data-value');
-                    highlightStar(rating);
-                }
+                    function handleHover(e) {
+                        const rating = e.currentTarget.getAttribute('data-value');
+                        highlightStar(rating);
+                    }
 
-                function handleLeave() {
-                    highlightStar(rating);
-                }
+                    function handleLeave() {
+                        highlightStar(rating);
+                    }
 
-                function handleClick(e) {
-                    btn.style.display = 'block';
-                    rating = e.currentTarget.getAttribute('data-value');
-                    bigStar.style.fontSize = `${1 + rating * 0.1}em`;
-                    ratingText.textContent = rating;
-                    feedback.innerHTML = getFeedbackMessage(rating);
-                    feedback.style.visibility = 'visible';
-                    feedback.style.opacity = '1';
+                    function handleClick(e) {
+                        btn.style.display = 'block';
+                        rating = e.currentTarget.getAttribute('data-value');
+                        bigStar.style.fontSize = `${1 + rating * 0.1}em`;
+                        ratingText.textContent = rating;
+                        feedback.innerHTML = getFeedbackMessage(rating);
+                        feedback.style.visibility = 'visible';
+                        feedback.style.opacity = '1';
 
-                    removeStarHover();
-                }
+                        removeStarHover();
+                    }
 
-                // Add event listener to the submit button outside of handleClick
-                btn.addEventListener('click', handleReset);
+                    // Add event listener to the submit button outside of handleClick
+                    btn.addEventListener('click', handleReset);
 
-                function handleReset() {
-                    btn.style.display = 'none';
-                    bigStar.style.fontSize = '1em';
-                    ratingText.textContent = '';
-                    feedback.innerHTML = '';
-                    feedback.style.visibility = 'hidden';
-                    feedback.style.opacity = '0';
+                    function handleReset() {
+                        btn.style.display = 'none';
+                        bigStar.style.fontSize = '1em';
+                        ratingText.textContent = '';
+                        feedback.innerHTML = '';
+                        feedback.style.visibility = 'hidden';
+                        feedback.style.opacity = '0';
 
-                    // Display "Thank you"
+                        // Display "Thank you" message
+                        thankYouMessage.style.display = 'block';
 
+                        // Set timeout to hide the "Thank you" message after 3 seconds
+                        setTimeout(function () {
+                            thankYouMessage.style.display = 'none';
+                        }, 3000);
 
-                    // Set timeout to hide the "Thank you" message after 3 seconds
+                        // Remove event listener to prevent further clicks
+                        btn.removeEventListener('click', handleReset);
 
+                        // Reset the hover effect on stars
+                        stars.forEach(star => {
+                            star.classList.remove('selected');
+                        });
+                    }
+                </script>
 
-                    // Remove event listener to prevent further clicks
-                    btn.removeEventListener('click', handleReset);
-
-                    // Reset the hover effect on stars
-                    stars.forEach(star => {
-                        star.classList.remove('selected');
-                    });
-
-                }
-            </script>
-
+            </div>
 
         </section>
         <!--contact section-->
-        <section class="contact_form top ">
+        <section class="contact_form top">
             <div class="contact-form-container" id="contact-form">
                 <div class="contact-details">
                     <center>
@@ -1373,7 +1479,6 @@
                 </script>
 
         </section>
-
         <!--Modal-->
         <div id="myModal2" class="modal">
             <div class="modal-content">
@@ -1452,18 +1557,19 @@
 
             </script>
         </section>
-         <button id="mode-toggle-btn"></button>
-    <script>
-        const modeToggleBtn = document.querySelector('#mode-toggle-btn');
-        const appContainer = document.querySelector('#app-container');
+        <button id="mode-toggle-btn"></button>
+        <script>
+            const modeToggleBtn = document.querySelector('#mode-toggle-btn');
+            const appContainer = document.querySelector('#app-container');
 
-        modeToggleBtn.addEventListener('click', () => {
-            appContainer.classList.toggle('day-mode');
-            appContainer.classList.toggle('night-mode');
-        });
-    </script>
+            modeToggleBtn.addEventListener('click', () => {
+                appContainer.classList.toggle('day-mode');
+                appContainer.classList.toggle('night-mode');
+            });
+        </script>
 
     </div>
+
 </body>
 
 </html>

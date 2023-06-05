@@ -178,24 +178,34 @@ header ul {
 header ul li {
     margin-left: 2rem;
     padding: 2px 15px;
-    background-color: #20b9fc;
     outline: none;
-    border: 1px solid #20b9fc;
     color: #20b9fc;
     border-radius: 50px 50px 50px 0px;
     margin-top: 10px;
     transition: 0.5s;
 }
+header ul li .contact{
+    padding: 10px 25px;
+    outline: none;
+    background-color: #20b9fc;
+    border-radius: 5px;
+    margin-top: 5px;
+    transition: 0.5s;
+}
+header ul li .contact:hover{
+    background-color: #badbe9;
+    color: #000;
+}
 
 header ul li a {
-    font-size: 10px;
-    font-weight: 400;
-    color: #5632fa;
-    transition: 0.5s;
+    font-size: 13px;
+    font-weight: 500;
+    color: #0a0a0c;
+    transition: 0.5s ease-in-out;
 }
 
 header ul li a:hover {
-    color: lightgreen;
+     color: #20b9fc;
 }
 
 /* css for small screens*/
@@ -294,20 +304,19 @@ header ul li a:hover {
 }
 
 .button input {
-    padding: 10px 50px;
-    justify-content: center;
-    border-radius: 8%;
-    margin: 10px;
-    border-bottom: 5px solid rgba(141, 141, 227, 0.904);
-    overflow: hidden;
+     padding: 12px 35px;
+    background-color: #20b9fc;
+    border-radius: 5px;
+    margin-top: 10px;
     transition: 0.5s;
-    cursor: pointer;
+    border: none;
+    font-weight: 700;
+   font-style: italic;
 }
 
 .button input:hover {
-    z-index: 1;
-    transform: scale(1.05s);
-    border-bottom: 5px solid lightgreen;
+   background-color: #badbe9;
+    color: #000;
 }
 
 .hero-content img {

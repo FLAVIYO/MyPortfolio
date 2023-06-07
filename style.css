@@ -37,7 +37,7 @@ body {
 
 .heading span {
     font-size: 40px;
-    background-image: linear-gradient(to right, #f348dc, #34e26b);
+    background-image: linear-gradient(to right, #dd3dc7, #34e26b);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
